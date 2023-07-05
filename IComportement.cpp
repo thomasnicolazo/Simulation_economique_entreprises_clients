@@ -1,0 +1,1 @@
+//implémentation vide IComportement étant une interface
