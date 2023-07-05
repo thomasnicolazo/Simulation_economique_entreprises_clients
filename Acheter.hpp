@@ -5,14 +5,15 @@
  * 
  * 
 */
-#include "IComportement.h"
+#include "IComportement.hpp"
 
 class Acheter:virtual IComportement
 {
-private:
+
    
 public:
     Acheter();
     ~Acheter();
+    void action() override;
 };
 

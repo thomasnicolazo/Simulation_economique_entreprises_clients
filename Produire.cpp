@@ -11,6 +11,7 @@ Produire::~Produire()
 }
 
 void Produire::action(){
-    this->acteur
+    this->acteur;
+    //ToDo action on this -> acteur
 
 }
