@@ -11,28 +11,28 @@ protected:
 	bool estFabrique;
 	
 public:
-	Produits(std::string nom,int dureeF)
+	Produits(std::string nom,int dureeF);
 
-	~Produits()
+	~Produits();
 
-	void setPrix(double price)
+	void setPrix(double price);
 
-	double getPrix()
+	double getPrix();
 
-	void setDureedeFabrication (int dureeF)
+	void setDureedeFabrication (int dureeF);
 
-	int getDureeDeFabrication()
+	int getDureeDeFabrication();
 
-	void updateFabriqueDepuis()
+	void updateFabriqueDepuis();
 	
 };
 
 class ProduitBrute: public Produits // composants de fabrication
 {
 public:
-	ProduitBrute(std::string _nom,int _dureeF) : Produits(std::string _nom,int _dureeF)
+	ProduitBrute(std::string _nom,int _dureeF) : Produits(std::string _nom,int _dureeF);
 	
-	~ProduitBrute(){}
+	~ProduitBrute();
 };
 
 class ProduitFini : public Produits// produits avec valeurs ajoutées
@@ -42,7 +42,7 @@ private:
 public:
 	ProduitFini(std::string _nom,int _dureeF, int quality) : Produits(std::string _nom,int _dureeF)
 	
-	~ProduitFini()
+	~ProduitFini();
 
-	int getQualite()
+	int getQualite();
 };
