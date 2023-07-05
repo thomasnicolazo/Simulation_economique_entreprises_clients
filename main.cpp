@@ -1,5 +1,5 @@
 /**
-*Fichier d'entrée pour la solution
+*Fichier d'entree pour la solution
 * 
 * 
 * 

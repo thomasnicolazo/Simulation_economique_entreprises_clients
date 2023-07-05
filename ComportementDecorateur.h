@@ -5,12 +5,14 @@
  * 
  * **/
 #include "IComportement.h"
+#include "vector"
+
 class ComportementDecorateur : virtual IComportement 
 {
 private:
-    /* data */
+    std::vector<IComportement> comportements;
 public:
-    ComportementDecorateur(/* args */);
+    ComportementDecorateur();
     ~ComportementDecorateur();
 };
 

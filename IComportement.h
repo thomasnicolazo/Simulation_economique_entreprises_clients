@@ -11,7 +11,7 @@
 
 class IComportement
 {
-private:
+protected:
 	IActeur acteur;
 public:
 	virtual void action();
