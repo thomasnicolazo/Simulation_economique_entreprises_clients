@@ -40,7 +40,7 @@ class ProduitFini : public Produits// produits avec valeurs ajoutées
 private:
 	int qualite;
 public:
-	ProduitFini(std::string _nom,int _dureeF, int quality) : Produits(std::string _nom,int _dureeF)
+	ProduitFini(std::string _nom,int _dureeF, int quality) : Produits(std::string _nom,int _dureeF);
 	
 	~ProduitFini();
 
