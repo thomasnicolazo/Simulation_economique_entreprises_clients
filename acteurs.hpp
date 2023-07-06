@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "Produits.hpp"
+#include "Entrepot.hpp"
 
 //-----Interface des entreprises et des humains------//
 class IActeur
@@ -35,6 +36,7 @@ protected :
     int nbrEmploye;
     double revenuTour;
     double depenseTour;
+    Entrepot entrepotEntreprise;
     std::deque<Produits> productionTour;
     rechercheEtDev r_d;
     ProduitFini produitFabrication;
@@ -43,27 +45,32 @@ protected :
 public:
     //------Constructeurs de la classe------//
     Entreprise(std::string nom_, std::string adresse_, double acompte_,\
-               int nbrEmploye_, double revenuTour_, double depenseTour_,\
-               std::deque<Produits> productionTour_, rechercheEtDev r_d_, ProduitFini produitFabrication_);
+                int nbrEmploye_, double revenuTour_, double depenseTour_,\
+                Entrepot entrepot_, std::deque<Produits> productionTour_,\
+                rechercheEtDev r_d_, ProduitFini produitFabrication_);
     //-------Destructeur de la classe------//
     ~Entreprise();
     //------Accesseurs de la classe------//
     int getNbrEmploye();
     double getRevenuTour();
     double getDepenseTour();
+    Entrepot getEntrepot();
     rechercheEtDev getR_D();
     ProduitFini getProduitFabrication();
 
-
+    //-----Méthode pour obtenir les produits bruts présents dans l'entrepôts-------//
+    std::vector<Produits> getProduitsBruts();
+    //-----Méthode pour obtenir les produits finis présents dans l'entrepôts-------//
+    std::vector<Produits> getProduitsAVecndre();
 
 
     std::deque<Produits> getProductionTour();
 
-    std::deque<Produits> produire();
+    std::deque<Produits> produire(Entrepot entrepotEntreprise);
 
     void commande(Produits produit, Entreprise boite);
 
-    void vendre();
+    void vendre(Produits produit);
 
     void rapportDetailTour();
 
