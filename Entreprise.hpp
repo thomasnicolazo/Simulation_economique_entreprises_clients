@@ -25,6 +25,10 @@ protected :
     rechercheEtDev r_d;
     ProduitFini produitFabrication;
 
+    //Attributs pour le rapport détaillé du tour.
+    std::deque<Produits> produitsAchetesTour;
+    std::deque<Produits> produitsVendusTour;
+
 
 public:
     //------Constructeurs de la classe------//
@@ -40,13 +44,16 @@ public:
     double getDepenseTour();
     Entrepot getEntrepot();
     rechercheEtDev getR_D();
+    std::deque<Produits> getProductionTour();
     ProduitFini getProduitFabrication();
+    std::deque<Produits> getProduitsAchetesTour();
+    std::deque<Produits> getProduitsVendusTour();
 
     //-----Méthode pour obtenir les produits finis présents dans l'entrepôts-------//
-    std::vector<Produits> getProduitsAVecndre();
+    std::vector<Produits> getProduitsAVendre();
 
-
-    std::deque<Produits> getProductionTour();
+    //-----Méthode de début de tour-----//
+    void attributsTourZero();
 
     std::deque<Produits> produire(Entrepot entrepotEntreprise);
 

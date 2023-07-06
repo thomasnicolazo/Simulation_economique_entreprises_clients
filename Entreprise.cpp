@@ -24,23 +24,23 @@ Entreprise::~Entreprise(){};
 //------Accesseurs de la classe------//
 int Entreprise::getNbrEmploye()
 {
-    return nbrEmploye;
+    return Entreprise::nbrEmploye;
 }
 double Entreprise::getRevenuTour()
 {
-    return revenuTour;
+    return Entreprise::revenuTour;
 }
 double Entreprise::getDepenseTour()
 {
-    return depenseTour;
+    return Entreprise::depenseTour;
 }
 Entrepot Entreprise::getEntrepot()
 {
-    return entrepotEntreprise;
+    return Entreprise::entrepotEntreprise;
 }
 rechercheEtDev Entreprise::getR_D()
 {
-    return r_d;
+    return Entreprise::r_d;
 }
 ProduitFini Entreprise::getProduitFabrication()
 {
@@ -48,7 +48,15 @@ ProduitFini Entreprise::getProduitFabrication()
 }
 std::deque<Produits> Entreprise::getProductionTour()
 {
-        return productionTour;
+        return Entreprise::productionTour;
+}
+std::deque<Produits> getProduitsAchetesTour()
+{
+    return Entreprise::produitsAchetesTour;
+}
+std::deque<Produits> getProduitsVendusTour()
+{
+    return Entreprise::produitsVendusTour;
 }
 
 //-----Méthode pour obtenir les produits finis présents dans l'entrepôts-------//
@@ -89,12 +97,23 @@ void Entreprise::commande(Produits produit, Entreprise::Entreprise boite)
         {
             boite.vendre(produit);//l'autre entreprise le vend...
             entrepotEntreprise.rawProductsPushBack(produit);//et on le met dans l'entrepôt de l'entreprise présente.
+            Entreprise::produitsAchetesTour.push_back(produit);
             acompte-=produit.getPrix();//On diminue le compte de l'entreprise du prix du produit acheté.
             depenseTour-=produit.getPrix();
             break;
         }
     }
 
+}
+
+//-----Méthode de début de tour-----//
+//Réinitialise les attributs qui varient pendant le tour.
+void attributsTourZero()
+{
+    Entreprise::revenuTour=0;
+    Entreprise::depenseTour=0;
+    Entreprise::produitsAchetesTour.clear();
+    Entreprise::produitsVendusTour.clear();
 }
 
 void Entreprise::vendre(Produits produit)
@@ -117,13 +136,28 @@ void Entreprise::vendre(Produits produit)
     {               //et on le supprime de l'entrepôt.
         acompte+=produitsAVendre[i].getPrix();
         revenuTour+=produitsAVendre[i].getPrix();
-        entrepotEntreprise.eraseBoughtProduct(produit.getName(), produit.getPrix())
+        entrepotEntreprise.eraseBoughtProduct(produit.getName(), produit.getPrix());
+        Entreprise::produitsVendusTour.push_back(produit);
     }
 
 }
 
 
-void Entreprise::rapportDetailTour(etatDuTour)
+void Entreprise::rapportDetailTour()
 {
-
+    std::cout << "###---Rapport détaillé de l'entreprise " << Entreprise::getNom()<< "---###"<<std::endl;
+    std::cout << "Dépenses du tour : " << Entreprise::getDepenseTour() << std::endl;
+    std::cout << "Revenus du tour : " << Entreprise::getRevenuTour() << std::endl;
+    std::cout << "Liquidités actuelles : " << Entreprise::getAcompte() << std::endl;
+    std::cout << "Produits achetés : ";
+    for(int i=0;i< Entreprise::produitsAchetesTour.size();i++)
+    {
+        Entreprise::getProduitsAchetesTour()[i].displayProduct();
+    }
+    std::cout << "Produits vendus : ";
+    for(int i=0;i< Entreprise::produitsAchetesTour.size();i++)
+    {
+        Entreprise::getProduitsVendusTour()[i].displayProduct();
+    }
+    std::cout << "###---Fin du rapport de l'entreprise " << Entreprise::getNom()<< "---###"<<std::endl;
 }
