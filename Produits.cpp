@@ -35,6 +35,10 @@ void Produits::updateFabriqueDepuis(){
 		estFabrique = true;
 	}
 }
+
+std::string Produits::getName(){
+	return name;
+}
 	
 
 
