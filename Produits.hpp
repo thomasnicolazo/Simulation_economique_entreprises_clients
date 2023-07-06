@@ -1,3 +1,5 @@
+#ifndef PRODUITS_HPP_INCLUDED
+#define PRODUITS_HPP_INCLUDED
 #include <iostream>
 #include <string>
 
@@ -48,3 +50,5 @@ public:
 
 	int getQualite();
 };
+
+#endif
