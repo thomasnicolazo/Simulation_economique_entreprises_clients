@@ -6,7 +6,7 @@
 #pragma once 
 #include "IComportement.hpp"
 #include "ComportementDecorateur.hpp"
-#include "Acheter.hpp"
+#include "Consommer.hpp"
 class ComportementHumain :  virtual IComportement, ComportementDecorateur
 {
 

@@ -6,11 +6,12 @@
  * **/
 #pragma once
 #include "IComportement.hpp"
-class Consommer
+class Consommer: virtual IComportement
 {
 private:
-    /* data */
+   
 public:
-    Consommer(/* args */);
+    Consommer();
     ~Consommer();
+    void action() override;
 };

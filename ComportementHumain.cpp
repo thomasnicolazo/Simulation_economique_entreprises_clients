@@ -13,7 +13,7 @@ void ComportementHumain::action(){
         this->comportements.clear();
     }
     //we only use acheter action here
-    IComportement *acheter=(IComportement*)new Acheter();
+    IComportement *acheter=(IComportement*)new Consommer();
     this->comportements.push_back(acheter);
 
     for(auto p=this->comportements.begin();p!=this->comportements.end();p++){

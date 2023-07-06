@@ -1,51 +1,39 @@
-#include "acteurs.cpp"
+#include "Marche.hpp"
 
 
 
 //Transformer en signleton.
 //A retrouver depuis IActeur.
-class Marche
-{
-private :
-    std::deque<Entreprise> boitesSurLeMarche;
-    std::deque<Humain> humainsSurLeMarche;
-public:
-
-    Marche(Entreprise boite, Humain humain)
+Marche::Marche(Entreprise boite, Humain humain)
     {
         boitesSurLeMarche.push_back(boite);
         humainsSurLeMarche.push_back(humain);
     }
 
-    ~Marche()
+Marche::~Marche()
     {
     std::cout << "Un marché a été détruit." << std::endl;
     }
 
-    getListProduitsFini()
+Marche::getListProduitsFini()
     {
 
     }
-    getListProduitsBrute()
+Marche::getListProduitsBrute()
     {
 
     }
-    getListAcheteurs()
+Marche::getListAcheteurs()
     {
 
     }
-    getListVendeurs(Produit p)
+Marche::getListVendeurs(Produit p)
     {
 
     }
-    void Tour()
+Marche::void Tour()
     {
 
     }
 };
 
-int main()
-{
-    cout << "Hello world!" << endl;
-    return 0;
-}
