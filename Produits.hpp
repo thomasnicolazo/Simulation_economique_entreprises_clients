@@ -28,6 +28,8 @@ public:
 	void updateFabriqueDepuis();
 
 	std::string getName();
+
+	bool isDone();
 	
 };
 
@@ -49,6 +51,8 @@ public:
 	~ProduitFini();
 
 	int getQualite();
+
+	bool isDone();
 };
 
 #endif
