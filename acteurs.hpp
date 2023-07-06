@@ -18,7 +18,7 @@ public:
     //------Constructeurs de la classe------//
     IActeur(std::string nom_, std::string adresse_, double acompte_);
     //------Destructeur de la classe------//
-    virtual ~IActeur(){};
+    virtual ~IActeur();
     //------Accesseurs de la classe------//
     std::string getNom();
     std::string getAdresse();
@@ -46,7 +46,7 @@ public:
                int nbrEmploye_, double revenuTour_, double depenseTour_,\
                std::deque<Produits> productionTour_, rechercheEtDev r_d_, ProduitFini produitFabrication_);
     //-------Destructeur de la classe------//
-    ~Entreprise(){};
+    ~Entreprise();
     //------Accesseurs de la classe------//
     int getNbrEmploye();
     double getRevenuTour();
@@ -79,13 +79,13 @@ public :
     //------Constructeurs de la classe------//
     Humain(std::string nom_, std::string adresse_, double acompte_, double salaire_);
     //------Destructeur de la classe------//
-    ~Humain(){};
+    ~Humain();
     //------Accesseurs de la classe-------//
     double getSalaire();
 
 
 
-    double salaireTour();
+    void salaireTour();
 
     void consommer(ProduitFini bien);
 };
