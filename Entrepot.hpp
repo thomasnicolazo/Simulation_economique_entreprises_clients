@@ -2,6 +2,7 @@
 #define ENRTEPOT_HPP_INCLUDED
 #include <string>
 #include <vector>
+#include <deque>
 #include "Produits.hpp"
 
 class Entrepot
@@ -18,6 +19,7 @@ public:
 	std::vector<Produits> getProductsReadyToSell();
 	void eraseBoughtProduct(std::string name,double price);
 	void updateEntrepot();
+	void isRawProducts(std::deque<Produits> listeRawProducts);
 };
 
 #endif
