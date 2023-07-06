@@ -1,3 +1,4 @@
+#pragma once
 #ifndef PRODUITS_HPP_INCLUDED
 #define PRODUITS_HPP_INCLUDED
 #include <iostream>

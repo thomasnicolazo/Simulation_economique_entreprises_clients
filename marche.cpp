@@ -1,51 +1,61 @@
-#include "acteurs.cpp"
+/**
+ * Fichier Marche.hpp
+ * 
+ *  Définis le comportement des marchés
+ * 
+ *  singleton
+ * 
+ * 
+*/
+
+#include "Marche.hpp"
+
+Marche::getInstance(){
+    if(Marche::instance!=nullptr){
+        retunr Marche::instance
+    }
+}
+Marche::setInstance(Entreprise boite, Humain humain){
+    if(Marche::instance == nullptr){
+        Marche::instance=new Marche(Entreprise boite, Humain humain);
+    }
+    else{
+        Marche::instance.humainsSurLeMarche.push_back(humain);
+        Marche::instance.boitesSurLeMarche.push_back(boite);
+    }
+}
 
 
 
-//Transformer en signleton.
-//A retrouver depuis IActeur.
-class Marche
-{
-private :
-    std::deque<Entreprise> boitesSurLeMarche;
-    std::deque<Humain> humainsSurLeMarche;
-public:
-
-    Marche(Entreprise boite, Humain humain)
+Marche::Marche(Entreprise boite, Humain humain)
     {
         boitesSurLeMarche.push_back(boite);
         humainsSurLeMarche.push_back(humain);
     }
 
-    ~Marche()
+Marche::~Marche()
     {
     std::cout << "Un marché a été détruit." << std::endl;
     }
 
-    getListProduitsFini()
+Marche::getListProduitsFini()
     {
 
     }
-    getListProduitsBrute()
+Marche::getListProduitsBrute()
     {
 
     }
-    getListAcheteurs()
+Marche::getListAcheteurs()
     {
 
     }
-    getListVendeurs(Produit p)
+Marche::getListVendeurs(Produit p)
     {
 
     }
-    void Tour()
+void Marche::Tour()
     {
 
     }
-};
 
-int main()
-{
-    cout << "Hello world!" << endl;
-    return 0;
-}
