@@ -13,5 +13,6 @@ public:
     ~ComportementEntreprise();
     void action() override;
     Entreprise* getEntrepriseInstance() override;
+    Entreprise* LookForEntrepriseInstance();
 };
 

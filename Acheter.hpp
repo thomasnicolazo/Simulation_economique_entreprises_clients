@@ -15,7 +15,7 @@ class Acheter:virtual IComportement
 
    
 public:
-    Acheter();
+    Acheter(Entreprise &e);
     ~Acheter();
     void action() override;
 };
