@@ -11,7 +11,7 @@ protected:
 	bool estFabrique;
 	
 public:
-	Produits(std::string nom,int dureeF);
+	Produits(std::string nom, int dureeF);
 
 	~Produits();
 
@@ -30,7 +30,7 @@ public:
 class ProduitBrute: public Produits // composants de fabrication
 {
 public:
-	ProduitBrute(std::string _nom,int _dureeF) : Produits(std::string _nom,int _dureeF);
+	ProduitBrute(std::string _nom,int _dureeF);// : Produits( _nom, _dureeF);
 	
 	~ProduitBrute();
 };
@@ -40,7 +40,7 @@ class ProduitFini : public Produits// produits avec valeurs ajoutées
 private:
 	int qualite;
 public:
-	ProduitFini(std::string _nom,int _dureeF, int quality) : Produits(std::string _nom,int _dureeF);
+	ProduitFini(std::string _nom,int _dureeF, int quality); // : Produits( _nom, _dureeF);
 	
 	~ProduitFini();
 
