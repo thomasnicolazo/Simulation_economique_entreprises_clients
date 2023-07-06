@@ -28,7 +28,7 @@ public :
 
 
 
-    double salaireTour();
+    void salaireTour();
 
     void consommer(ProduitFini bien);
 };

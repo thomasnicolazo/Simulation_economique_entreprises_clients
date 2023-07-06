@@ -55,7 +55,7 @@ public:
     //-----Méthode de début de tour-----//
     void attributsTourZero();
 
-    std::deque<Produits> produire(Entrepot entrepotEntreprise);
+    std::deque<Produits> produire();
 
     void commande(Produits produit, Entreprise boite);
 

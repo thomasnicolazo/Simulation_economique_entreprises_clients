@@ -1,3 +1,5 @@
+#ifndef ICOMPORTEMENT_HPP_INCLUDED
+#define ICOMPORTEMENT_HPP_INCLUDED
 /**
 * Fichier IComportement.hpp
 *
@@ -5,7 +7,6 @@
 *
 *
 */
-#pragma once
 #include<stdlib.h>
 #include"IActeur.hpp"
 
@@ -20,3 +21,7 @@ public:
 	virtual ~IComportement();
 
 };
+
+
+
+#endif // ICOMPORTEMENT_HPP_INCLUDED
