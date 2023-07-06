@@ -29,6 +29,6 @@ void ComportementEntreprise::action(){
      * 
      * 
     */
-    Entreprise * acteur=this->getEntrepriseInstance();
+    Entreprise * acteur=(Entreprise*)this->acteur;
 
 }

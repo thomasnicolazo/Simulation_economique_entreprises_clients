@@ -10,14 +10,13 @@
 #include "Humain.hpp"
 class ComportementHumain :  virtual IComportement, ComportementDecorateur
 {
-private:
-    Humain* acteur;
+
  
 public:
     ComportementHumain(Humain &h);
     ~ComportementHumain();
     void action() override;
-    Humain* getHumainInstance() override;
+   
 };
 
 

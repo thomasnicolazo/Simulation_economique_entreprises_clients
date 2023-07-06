@@ -16,7 +16,5 @@ public:
     ComportementDecorateur();
     virtual ~ComportementDecorateur();
     virtual void action() ;
-    virtual Entreprise* getEntrepriseInstance() ;
-    virtual Humain* getHumainInstance() ;
 };
 
