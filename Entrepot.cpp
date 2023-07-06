@@ -1,5 +1,6 @@
 #include <string>
 #include <vector>
+#include <deque>
 #include "Entrepot.hpp"
 #include "Produits.hpp"
 
@@ -62,5 +63,28 @@ void Entrepot::updateEntrepot(){
 	}
 	for(int i=0;i<vectorProduitBrute.size();i++){
 		vectorProduitBrute[i].updateFabriqueDepuis();
+	}
+}
+
+bool Entrepot::isRawProducts(std::deque<Produits> listeRawProducts){
+	std::vector<Produits> vectorProduitBruteCopy = vectorProduitBrute;
+	int compteurMotTrouve = 0;
+	bool estdansLEntrepot = false;
+	for(int i =0; i<listeRawProducts.size();i++){
+		for(int j=0;j<vectorProduitBruteCopy.size();j++){
+			if(vectorProduitBruteCopy[j].getName() == listeRawProducts[i].getName()){
+				vectorProduitBruteCopy.erase(vectorProduitBruteCopy.begin()+j);
+				compteurMotTrouve++;
+				j--;
+				break;
+
+			}
+		}
+	}
+	if(compteurMotTrouve == listeRawProducts.size()){
+		return true;
+	}
+	else{
+		return false;
 	}
 }
