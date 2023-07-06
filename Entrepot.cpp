@@ -6,8 +6,12 @@
 Entrepot::Entrepot(){}
 Entrepot::~Entrepot(){}
 
-void Entrepot::pushBack(Produits product, std::vector<Produits> liste){
-	liste.push_back(product);
+void Entrepot::rawProductsPushBack(Produits product){
+	vectorProduitBrute.push_back(product);
+}
+
+void Entrepot::madeProductsPushBack(Produits product){
+	vectorProduitFini.push_back(product);
 }
 
 
@@ -24,4 +28,14 @@ Produits* Entrepot::getProductWithLowerPrice(std::string name, std::vector<Produ
 	}
 	
 	return productWithLowestPrice;
+}
+
+std::vector<Produits> Entrepot::getProductsReadyToSell(){
+	std::vector<Produits> productsReadyToSell;
+	for(int i=0; i<vectorProduitFini.size();i++){
+		if(vectorProduitFini[i].estFabrique){
+			productsReadyToSell.push_back(vectorProduitFini);
+		}
+	}
+	return productsReadyToSell;
 }
