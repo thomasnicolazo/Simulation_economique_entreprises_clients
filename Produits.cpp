@@ -40,11 +40,11 @@ std::string Produits::getName(){
 	return name;
 }
 
-bool ProduitFini::isDone(){
+bool Produits::isDone(){
 	return estFabrique;
 }
 
-void displayProduct(){
+void Produits::displayProduct(){
 	std::cout <<"name :" this.name << " prix : " << this.prix << std::endl;
 }
 
