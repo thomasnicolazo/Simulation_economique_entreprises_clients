@@ -12,8 +12,10 @@ private:
 public:
 	Entrepot();
 	~Entrepot();
-	void pushBack(Produits product, std::vector<Produits> liste);
+	void rawProductsPushBack(Produits product);
+	void madeProductsPushBack(Produits product);
 	Produits* getProductWithLowerPrice(std::string name, std::vector<Produits> liste);
+	std::vector<Produits> getProductsReadyToSell();
 };
 
 #endif
