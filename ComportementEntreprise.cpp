@@ -9,7 +9,7 @@ Entreprise* ComportementEntreprise::getEntrepriseInstance(){
     std::vector<Entreprise> l=marche.getListEntreprise();
     for(auto p=l.begin();p!=l.end();p++){
         if((*p).getNom()==this->acteur->getNom()){
-            return p;
+            return (Entreprise*) &(*p);
         }
     }
 }
@@ -24,6 +24,6 @@ void ComportementEntreprise::action(){
      * 
      * 
     */
-   Entreprise * acteur=this->getEntrepriseInstance();
+    Entreprise * acteur=this->getEntrepriseInstance();
 
 }
