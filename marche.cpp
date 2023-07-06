@@ -12,7 +12,7 @@
 
 Marche::getInstance(){
     if(Marche::instance!=nullptr){
-        retunr Marche::instance
+        return Marche::instance
     }
 }
 Marche::setInstance(Entreprise boite, Humain humain){
@@ -50,10 +50,21 @@ Marche::getListAcheteurs()
     {
 
     }
-Marche::getListVendeurs(Produit p)
+Marche::getListVendeurs(Produits produit)
     {
+        for(auto p=this->instance.boitesSurLeMarche.begin();p!=this->instance.boitesSurLeMarche.end();p++){
+            if(*p->getProduitFabrication()==produit.getName()){
+                //todo add to a list 
+            }
 
+        }
     }
+Marche::getListEntreprise(){
+    return this->instance.boitesSurLeMarche;
+}
+Marche::getListHumain(){
+    return this->instance.humainsSurLeMarche;
+}
 void Marche::Tour()
     {
 

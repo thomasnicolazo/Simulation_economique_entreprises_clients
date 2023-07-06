@@ -15,7 +15,7 @@ class Produire : IComportement
 {
 
 public:
-    Produire();
+    Produire(Entreprise &e);
     ~Produire();
     void action() override;
 };

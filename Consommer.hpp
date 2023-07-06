@@ -11,7 +11,7 @@ class Consommer: virtual IComportement
 private:
    
 public:
-    Consommer();
+    Consommer(Humain &h);
     ~Consommer();
     void action() override;
 };

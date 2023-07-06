@@ -13,7 +13,8 @@ class Vendre:virtual IComportement
 private:
     /* data */
 public:
-    Vendre(/* args */);
+    Vendre(Entreprise &e);
     ~Vendre();
+    void action() override;
 };
 

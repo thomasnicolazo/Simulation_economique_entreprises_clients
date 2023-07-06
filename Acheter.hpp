@@ -7,13 +7,15 @@
 */
 #pragma once
 #include "IComportement.hpp"
-
+#include "Marche.hpp"
+#include "vector"
+#include "Acheter.hpp"
 class Acheter:virtual IComportement
 {
 
    
 public:
-    Acheter();
+    Acheter(Entreprise &e);
     ~Acheter();
     void action() override;
 };

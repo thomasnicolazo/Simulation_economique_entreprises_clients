@@ -2,8 +2,9 @@
 
 
 
-Produire::Produire()
+Produire::Produire(Entreprise &e)
 {
+    this->acteur=&e;
 }
 
 Produire::~Produire()
@@ -11,7 +12,7 @@ Produire::~Produire()
 }
 
 void Produire::action(){
-    this->acteur;
+    Entreprise * entreprise=(Entreprise *)this->acteur;
     //ToDo action on this -> acteur
 
 }

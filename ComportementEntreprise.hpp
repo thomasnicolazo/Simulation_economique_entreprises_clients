@@ -5,11 +5,13 @@
 #include "Vendre.hpp"
 #include "Produire.hpp"
 
-class ComportementEntreprise :  virtual IComportement, ComportementDecorateur
+class ComportementEntreprise : virtual IComportement, ComportementDecorateur
 {
+
 public:
-    ComportementEntreprise();
+    ComportementEntreprise(Entreprise &e);
     ~ComportementEntreprise();
     void action() override;
+    Entreprise* LookForEntrepriseInstance();
 };
 

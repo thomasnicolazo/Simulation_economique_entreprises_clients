@@ -14,7 +14,7 @@ protected:
     std::vector<IComportement*> comportements;
 public:
     ComportementDecorateur();
-    ~ComportementDecorateur();
-    void action() override;
+    virtual ~ComportementDecorateur();
+    virtual void action() ;
 };
 
