@@ -39,6 +39,12 @@ void Produits::updateFabriqueDepuis(){
 std::string Produits::getName(){
 	return name;
 }
+
+bool ProduitFini::isDone(){
+	return estFabrique;
+}
+
+
 	
 
 
@@ -70,5 +76,9 @@ ProduitFini::~ProduitFini(){}
 
 int ProduitFini::getQualite(){
 		return qualite;
+}
+
+bool ProduitFini::isDone(){
+	return estFabrique;
 }
 

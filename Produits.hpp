@@ -1,3 +1,5 @@
+#ifndef PRODUITS_HPP_INCLUDED
+#define PRODUITS_HPP_INCLUDED
 #include <iostream>
 #include <string>
 
@@ -26,6 +28,8 @@ public:
 	void updateFabriqueDepuis();
 
 	std::string getName();
+
+	bool isDone();
 	
 };
 
@@ -47,4 +51,8 @@ public:
 	~ProduitFini();
 
 	int getQualite();
+
+	bool isDone();
 };
+
+#endif
