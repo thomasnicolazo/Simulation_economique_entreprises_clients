@@ -2,6 +2,7 @@
 #define ACTEURS_HPP_INCLUDED
 
 #include <iostream>
+#include "Produits.hpp"
 
 //-----Interface des entreprises et des humains------//
 class IActeur
@@ -25,7 +26,7 @@ public:
 
 };
 
-enum rechercheEtDev ={OUI, NON};
+enum rechercheEtDev {OUI, NON};
 
 class Entreprise : public IActeur
 {

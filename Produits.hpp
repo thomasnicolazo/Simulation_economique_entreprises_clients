@@ -25,6 +25,8 @@ public:
 	int getDureeDeFabrication();
 
 	void updateFabriqueDepuis();
+
+	std::string getName();
 	
 };
 
