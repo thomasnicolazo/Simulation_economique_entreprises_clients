@@ -1,9 +1,9 @@
 /**
-* Fichier IComportement.h
-* 
+* Fichier IComportement.hpp
+*
 * Ce fichier défini l'interface pour le comportement des IActeurs
-* 
-* 
+*
+*
 */
 #pragma once
 #include<stdlib.h>
