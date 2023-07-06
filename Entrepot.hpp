@@ -19,7 +19,7 @@ public:
 	std::vector<Produits> getProductsReadyToSell();
 	void eraseBoughtProduct(std::string name,double price);
 	void updateEntrepot();
-	void isRawProducts(std::deque<Produits> listeRawProducts);
+	bool isRawProducts(std::deque<Produits> listeRawProducts);
 };
 
 #endif
