@@ -11,16 +11,17 @@ void Entrepot::pushBack(Produits product, std::vector<Produits> liste){
 }
 
 
-Produits Entrepot::getProductWithLowerPrice(std::string name, std::vector<Produits> liste){
-	Produits productWithLowestPrice;
+Produits* Entrepot::getProductWithLowerPrice(std::string name, std::vector<Produits> liste){
+	Produits* productWithLowestPrice = nullptr;
 	for(int i =0; i<liste.size();i++){
-		if(productWithLowestPrice == NULL){
-			productWithLowestPrice = liste[i];
+		if(productWithLowestPrice == nullptr){
+			productWithLowestPrice = &liste[i];
 		}
-		else if(productWithLowestPrice.getPrix() > liste[i].getPrix() && liste[i].getName() == productWithLowestPrice.getName()){
-			productWithLowestPrice = liste[i];
+		else if(productWithLowestPrice->getPrix() > liste[i].getPrix() && liste[i].getName() == productWithLowestPrice->getName()){
+			productWithLowestPrice = &liste[i];
 		}
 		
 	}
+	
 	return productWithLowestPrice;
 }
