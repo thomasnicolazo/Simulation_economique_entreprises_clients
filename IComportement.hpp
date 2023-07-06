@@ -5,7 +5,7 @@
 * 
 * 
 */
-#include<iostream>
+#pragma once
 #include<stdlib.h>
 #include<IActeur.hpp>
 
@@ -15,4 +15,6 @@ protected:
 	IActeur acteur;
 public:
 	virtual void action();
+	IComportement();
+	virtual ~IComportement();
 };

@@ -1,15 +1,15 @@
 #include "Acheter.hpp"
 
 
-Acheter::Acheter(/* args */)
-{
-}
+Acheter::Acheter()=default;
 
 Acheter::~Acheter()
 {
 }
 void Acheter::action(){
-    this->acteur;
+    if(this->acteur.getAcompte()>0){
+        this->acteur.achete();
+    };
     //to do action on acteur
 
 }

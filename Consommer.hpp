@@ -4,7 +4,7 @@
  * interface pour l'implémentation du comportement Consommer
  * 
  * **/
-
+#pragma once
 #include "IComportement.hpp"
 class Consommer
 {

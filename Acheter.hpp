@@ -1,10 +1,11 @@
 /**
  * Fichier acheter.h
  * 
- * implemntation du comportement achat pour l'entreprise ou le client humain
+ * implementation du comportement achat pour l'entreprise ou le client humain
  * 
  * 
 */
+#pragma once
 #include "IComportement.hpp"
 
 class Acheter:virtual IComportement
