@@ -8,6 +8,8 @@
 #include "IComportement.hpp"
 #include<string>
 #include<iostream>
+#include"Marche.hpp"
+
 class IActeur
 {
 
@@ -28,6 +30,7 @@ public:
     std::string getAdresse();
     int getAcompte();
     void achete();
+    Marche getInstance();
 
 };
 
