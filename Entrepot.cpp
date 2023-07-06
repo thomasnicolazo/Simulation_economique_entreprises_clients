@@ -1,0 +1,26 @@
+#include <string>
+#include <vector>
+#include "Entrepot.hpp"
+#include "Produits.hpp"
+
+Entrepot::Entrepot(){}
+Entrepot::~Entrepot(){}
+
+void Entrepot::PushBack(Produits product, std::vector<Produits> liste){
+	liste.push_back(product);
+}
+
+
+Produits Entrepot::getProductWithLowerPrice(std::string name, std::vector<Produits> liste){
+	Produits productWithLowestPrice = NULL;
+	for(int i =0; i<liste.size();i++){
+		if(productWithLowestPrice == NULL){
+			productWithLowestPrice = liste[i];
+		}
+		else if(productWithLowestPrice.getPrix() > liste[i].getPrix() && liste[i].getName() == productWithLowestPrice.getName()){
+			productWithLowestPrice = liste[i];
+		}
+		
+	}
+	return productWithLowestPrice;
+}
