@@ -16,6 +16,8 @@ public:
 	void madeProductsPushBack(Produits product);
 	Produits* getProductWithLowerPrice(std::string name, std::vector<Produits> liste);
 	std::vector<Produits> getProductsReadyToSell();
+	void eraseBoughtProduct(std::string name,double price);
+	void updateEntrepot();
 };
 
 #endif
