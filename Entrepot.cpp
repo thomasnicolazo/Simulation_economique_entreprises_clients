@@ -6,13 +6,13 @@
 Entrepot::Entrepot(){}
 Entrepot::~Entrepot(){}
 
-void Entrepot::PushBack(Produits product, std::vector<Produits> liste){
+void Entrepot::pushBack(Produits product, std::vector<Produits> liste){
 	liste.push_back(product);
 }
 
 
 Produits Entrepot::getProductWithLowerPrice(std::string name, std::vector<Produits> liste){
-	Produits productWithLowestPrice = NULL;
+	Produits productWithLowestPrice;
 	for(int i =0; i<liste.size();i++){
 		if(productWithLowestPrice == NULL){
 			productWithLowestPrice = liste[i];
