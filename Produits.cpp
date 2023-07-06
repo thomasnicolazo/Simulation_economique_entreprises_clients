@@ -45,7 +45,7 @@ bool Produits::isDone(){
 }
 
 void Produits::displayProduct(){
-	std::cout <<"name :" this.name << " prix : " << this.prix << std::endl;
+	std::cout << "name :" << name << " prix : " << prix << std::endl;
 }
 
 	
