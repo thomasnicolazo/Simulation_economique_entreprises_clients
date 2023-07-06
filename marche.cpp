@@ -12,7 +12,7 @@
 
 Marche::getInstance(){
     if(Marche::instance!=nullptr){
-        retunr Marche::instance
+        return Marche::instance
     }
 }
 Marche::setInstance(Entreprise boite, Humain humain){
@@ -54,6 +54,9 @@ Marche::getListVendeurs(Produit p)
     {
 
     }
+Marche::getListAllVendeurs(){
+    return this->instance.boitesSurLeMarche;
+}
 void Marche::Tour()
     {
 

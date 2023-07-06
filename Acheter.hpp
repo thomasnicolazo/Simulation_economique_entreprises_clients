@@ -7,6 +7,8 @@
 */
 #pragma once
 #include "IComportement.hpp"
+#include "Marche.hpp"
+#include "vector"
 
 class Acheter:virtual IComportement
 {

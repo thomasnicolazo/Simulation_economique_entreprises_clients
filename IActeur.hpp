@@ -30,7 +30,6 @@ public:
     std::string getAdresse();
     int getAcompte();
     void achete();
-    Marche getInstance();
 
 };
 
