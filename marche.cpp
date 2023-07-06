@@ -50,12 +50,20 @@ Marche::getListAcheteurs()
     {
 
     }
-Marche::getListVendeurs(Produit p)
+Marche::getListVendeurs(Produits produit)
     {
+        for(auto p=this->instance.boitesSurLeMarche.begin();p!=this->instance.boitesSurLeMarche.end();p++){
+            if(*p->getProduitFabrication()==produit.getName()){
+                //todo add to a list 
+            }
 
+        }
     }
-Marche::getListAllVendeurs(){
+Marche::getListEntreprise(){
     return this->instance.boitesSurLeMarche;
+}
+Marche::getListHumain(){
+    return this->instance.humainsSurLeMarche;
 }
 void Marche::Tour()
     {

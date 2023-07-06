@@ -4,6 +4,16 @@
 ComportementEntreprise::ComportementEntreprise()=default;
 ComportementEntreprise::~ComportementEntreprise()=default;
 
+Entreprise* ComportementEntreprise::getEntrepriseInstance(){
+    Marche marche=Marche::getInstance();
+    std::vector<Entreprise> l=marche.getListEntreprise();
+    for(auto p=l.begin();p!=l.end();p++){
+        if((*p).getNom()==this->acteur->getNom()){
+            return p;
+        }
+    }
+}
+
 void ComportementEntreprise::action(){
     /**
      * une entreprise achete si elle ne produit plus
@@ -14,6 +24,6 @@ void ComportementEntreprise::action(){
      * 
      * 
     */
-   //this->acteur->
+   Entreprise * acteur=this->getEntrepriseInstance();
 
 }

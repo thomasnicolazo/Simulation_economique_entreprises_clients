@@ -7,14 +7,16 @@
 */
 #pragma once
 #include<stdlib.h>
-#include<IActeur.hpp>
+#include"IActeur.hpp"
 
 class IComportement
 {
 protected:
-	IActeur acteur;
+
+	IActeur* acteur;
 public:
 	virtual void action();
 	IComportement();
 	virtual ~IComportement();
+
 };

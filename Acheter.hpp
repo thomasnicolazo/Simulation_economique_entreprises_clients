@@ -9,7 +9,7 @@
 #include "IComportement.hpp"
 #include "Marche.hpp"
 #include "vector"
-
+#include "Acheter.hpp"
 class Acheter:virtual IComportement
 {
 

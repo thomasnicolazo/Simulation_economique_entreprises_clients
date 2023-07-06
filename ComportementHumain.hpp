@@ -7,14 +7,17 @@
 #include "IComportement.hpp"
 #include "ComportementDecorateur.hpp"
 #include "Consommer.hpp"
+#include "Humain.hpp"
 class ComportementHumain :  virtual IComportement, ComportementDecorateur
 {
-
+private:
+    Humain* acteur;
  
 public:
-    ComportementHumain(/* args */);
+    ComportementHumain(Humain &h);
     ~ComportementHumain();
     void action() override;
+    Humain* getHumainInstance() override;
 };
 
 

@@ -28,7 +28,8 @@ public:
     std::vector<Produits> getListProduitsBrute();
     std::vector<IActeur> getListAcheteurs();
     std::vector<IActeur> getListVendeurs(Produits p);
-    std::vector<IActeur> getListAllVendeurs();
+    std::vector<Entreprise> getListEntreprise();
+    std::vector<Humain> getListHumain();
     void Tour();
 };
 

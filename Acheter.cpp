@@ -8,7 +8,11 @@ Acheter::~Acheter()
 void Acheter::action(){
    
     //to do action on acteur
+    //test si l'entreprise ne produit pas?
     Marche instance=Marche::getInstance();
-    std::vector<IActeur> list=instance.getListVendeurs();
+    Entreprise acteur=(Entreprise)this->getEntrepriseInstance();
+    for(auto p=)
+    std::vector<IActeur> vendeurList=instance.getListAllVendeurs();
+
 
 }

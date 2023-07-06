@@ -3,7 +3,11 @@
 
 
 
-ComportementHumain::ComportementHumain()=default;
+ComportementHumain::ComportementHumain(Humain &h){
+    this->acteur=&h;
+
+
+};
 ComportementHumain::~ComportementHumain()=default;
 
 
@@ -17,11 +21,11 @@ void ComportementHumain::action(){
     this->comportements.push_back(acheter);
 
     for(auto p=this->comportements.begin();p!=this->comportements.end();p++){
-        int accompte=this->acteur.getAcompte();
+        int accompte=this->acteur->getAcompte();
         (*p)->action();
-        if(this->acteur.getAcompte()>0 && accompte>this->acteur.getAcompte()){
+        if(this->acteur->getAcompte()>0 && accompte>this->acteur->getAcompte()){
             //we try to achete something still we presume we manage to buy a product
-            IComportement *acheter=(IComportement*)new Acheter();
+            IComportement *acheter=(IComportement*)new Consommer();
             this->comportements.push_back(acheter);
         }
     }
