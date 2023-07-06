@@ -1,10 +1,15 @@
 #pragma once
 #include "ComportementEntreprise.hpp"
 
-ComportementEntreprise::ComportementEntreprise()=default;
+ComportementEntreprise::ComportementEntreprise(Entreprise &entreprise){
+
+    this->acteur=&entreprise;
+
+
+};
 ComportementEntreprise::~ComportementEntreprise()=default;
 
-Entreprise* ComportementEntreprise::getEntrepriseInstance(){
+Entreprise* ComportementEntreprise::LookForEntrepriseInstance(){
     Marche marche=Marche::getInstance();
     std::vector<Entreprise> l=marche.getListEntreprise();
     for(auto p=l.begin();p!=l.end();p++){

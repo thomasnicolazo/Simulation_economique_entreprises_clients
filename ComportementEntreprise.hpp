@@ -9,7 +9,7 @@ class ComportementEntreprise : virtual IComportement, ComportementDecorateur
 {
 
 public:
-    ComportementEntreprise();
+    ComportementEntreprise(Entreprise &e);
     ~ComportementEntreprise();
     void action() override;
     Entreprise* getEntrepriseInstance() override;
