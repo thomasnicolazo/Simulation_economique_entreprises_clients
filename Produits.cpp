@@ -44,7 +44,7 @@ std::string Produits::getName(){
 
 // class ProduitBrute
 
-ProduitBrute::ProduitBrute(std::string _nom,int _dureeF) : Produits::Produits(std::string _nom,int _dureeF)
+ProduitBrute::ProduitBrute(std::string _nom,int _dureeF) : Produits::Produits( _nom, _dureeF)
 {
 	dureeFabrication = _dureeF;
 	fabriqueDepuis = 0;
@@ -57,7 +57,7 @@ ProduitBrute::~ProduitBrute(){}
 
 // class ProduitFini
 
-ProduitFini::ProduitFini(std::string _nom,int _dureeF, int quality) : Produits::Produits(std::string _nom,int _dureeF)
+ProduitFini::ProduitFini(std::string _nom,int _dureeF, int quality) : Produits::Produits( _nom, _dureeF)
 {
 	dureeFabrication = _dureeF;
 	fabriqueDepuis = 0;
