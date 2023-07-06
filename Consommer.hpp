@@ -1,11 +1,11 @@
 /**
- * Fichier Consommer.h
+ * Fichier Consommer.hpp
  * 
  * interface pour l'implémentation du comportement Consommer
  * 
  * **/
 
-#include "IComportement.h"
+#include "IComportement.hpp"
 class Consommer
 {
 private:

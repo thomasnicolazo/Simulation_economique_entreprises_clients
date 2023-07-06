@@ -1,4 +1,4 @@
-#include "ComportementDecorateur.h"
+#include "ComportementDecorateur.hpp"
 
 
 ComportementDecorateur::ComportementDecorateur()

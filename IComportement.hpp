@@ -7,7 +7,7 @@
 */
 #include<iostream>
 #include<stdlib.h>
-#include<IActeur.h>
+#include<IActeur.hpp>
 
 class IComportement
 {

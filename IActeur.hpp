@@ -1,5 +1,5 @@
 /**
-* Fichier IActeur.h
+* Fichier IActeur.hpp
 * 
 * Définissant l'interface pour les acteurs..
 * 

@@ -4,7 +4,7 @@
  * Définit l'interface pour l'implémentation du comportement vendre
  * 
  * **/
-#include "IComportement.h"
+#include "IComportement.hpp"
 
 
 class Vendre:virtual IComportement
