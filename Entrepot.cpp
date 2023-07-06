@@ -40,7 +40,7 @@ std::vector<Produits> Entrepot::getProductsReadyToSell(){
 	return productsReadyToSell;
 }
 
-void Entrepot::productHasBeenBought(std::string name,double price){
+void Entrepot::eraseBoughtProduct(std::string name,double price){
 	int confirmation =0;
 	for(int i=0; i<vectorProduitFini.size();i++){
 		if(vectorProduitFini[i].isDone()){
