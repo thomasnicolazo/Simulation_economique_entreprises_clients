@@ -28,9 +28,9 @@ Produits* Entrepot::getProductWithLowerPrice(std::string name, std::vector<Produ
 		else if(productWithLowestPrice->getPrix() > liste[i].getPrix() && liste[i].getName() == productWithLowestPrice->getName()){
 			productWithLowestPrice = &liste[i];
 		}
-		
+
 	}
-	
+
 	return productWithLowestPrice;
 }
 
