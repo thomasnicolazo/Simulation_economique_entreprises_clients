@@ -67,6 +67,9 @@ void Entrepot::updateEntrepot(){
 }
 
 bool Entrepot::isRawProducts(std::deque<Produits> listeRawProducts){
+	/* fonction qui regarde si les materiaux de construction sont disponibles en stock dans l'entrepot.
+	Elle prend en argument la liste des matériaux a cherché puis compare leurs disponibilités dans l'inventaire.
+	Si ils sont tous disponibles retourne vrai*/
 	std::vector<Produits> vectorProduitBruteCopy = vectorProduitBrute;
 	int compteurMotTrouve = 0;
 	bool estdansLEntrepot = false;
