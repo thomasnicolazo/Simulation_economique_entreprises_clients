@@ -11,6 +11,7 @@ protected:
 	int dureeFabrication; // temps nécéssaire à la fabrication du produit
 	int fabriqueDepuis; // temps depuis le commencent de la favrication (commence à 0)
 	bool estFabrique; // vrai: si le produit est fini d'étre fait; faux sinon
+	std::string nameEntreprise; // nom de l'entreprise qui a fabriqué le produit
 	
 public:
 	Produits(std::string nom, int dureeF);
@@ -30,7 +31,9 @@ public:
 	std::string getName();
 
 	bool isDone(); // le prroduit est fini si isDone est true; sinon false
-	
+
+	std::string getEntrepriseName(); // return the name of the company which made the product
+
 	void displayProduct(); // affiche le nom puis le prix
 };
 
