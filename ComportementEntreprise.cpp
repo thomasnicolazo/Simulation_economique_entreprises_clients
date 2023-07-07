@@ -9,8 +9,12 @@ ComportementEntreprise::ComportementEntreprise(Entreprise &entreprise){
 ComportementEntreprise::~ComportementEntreprise()=default;
 
 Entreprise* ComportementEntreprise::LookForEntrepriseInstance(){
-    Marche marche=Marche::getInstance();
-    std::vector<Entreprise> l=marche.getListEntreprise();
+    /**
+     * Useless method (in case of)
+     * 
+    */
+    Marche* marche=Marche::getInstance();
+    std::deque<Entreprise> l=marche->getListEntreprise();
     for(auto p=l.begin();p!=l.end();p++){
         if((*p).getNom()==this->acteur->getNom()){
             return (Entreprise*) &(*p);

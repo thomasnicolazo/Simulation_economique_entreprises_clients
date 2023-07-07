@@ -10,7 +10,7 @@
 #include "Humain.hpp"
 class IComportement;
 class ComportementDecorateur;
-class ComportementHumain :  public virtual IComportement,  virtual ComportementDecorateur
+class ComportementHumain :  public virtual IComportement,  public virtual ComportementDecorateur
 {
 
 private:

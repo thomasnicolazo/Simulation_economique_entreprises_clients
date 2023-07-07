@@ -10,9 +10,9 @@
 
 #include "Marche.hpp"
 
-Marche *Marche::getInstance(){
+Marche* Marche::getInstance(){
     if(Marche::instance!=nullptr){
-        return Marche::instance
+        return Marche::instance;
     }
 }
 void Marche::setInstance(Entreprise boite, Humain humain){
