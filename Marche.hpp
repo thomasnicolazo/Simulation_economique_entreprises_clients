@@ -6,6 +6,7 @@
  * 
  * 
 */
+#pragma once
 #include<deque>
 #include<stdlib.h>
 #include "Entreprise.hpp"

@@ -23,7 +23,7 @@ public:
     //------Constructeurs de la classe------//
     IActeur(std::string nom_, std::string adresse_, double acompte_);
     //------Destructeur de la classe------//
-    virtual ~IActeur();
+    ~IActeur();
     //------Accesseurs de la classe------//
     std::string getNom();
     std::string getAdresse();
