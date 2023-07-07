@@ -28,5 +28,7 @@ public :
     //------Méthode pour augmenter le compte d'un humain à chaque tour------//
     void salaireTour();
 
+    //-----Méthode pour permettre à un humain de consommer------//
+    //Utilise la mthode d'entreprise "vendre" pour supprimer un produit de l'entrepot.
     void consommer(ProduitFini bien);
 };
