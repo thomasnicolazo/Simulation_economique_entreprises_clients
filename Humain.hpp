@@ -13,7 +13,7 @@
 #include "Entreprise.hpp"
 
 class IActeur;
-class Humain :public virtual  IActeur
+class Humain :public IActeur
 {
 private :
     double salaire;

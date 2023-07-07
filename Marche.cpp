@@ -40,17 +40,17 @@ Marche::~Marche()
     }
 
 std::vector<Produits> Marche::getListProduitsFini()
-{   
+{
     std::vector<Produits> results;
     auto entreprises=this->boitesSurLeMarche;
     for(auto p=entreprises.begin();p!=entreprises.end();p++){
-            
+
             std::vector<Produits> tmp=p->getEntrepot().getProductsReadyToSell();
             results.insert(results.end(), tmp.begin(), tmp.end());
     }
     return results;
-    
-    
+
+
  }
 
 std::vector<Produits>Marche::getListProduitsBrute()

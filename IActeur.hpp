@@ -7,7 +7,6 @@
 #pragma once
 #include "IComportement.hpp"
 #include<string>
-#include"Marche.hpp"
 
 class IActeur
 {
