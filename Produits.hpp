@@ -56,5 +56,5 @@ public:
 
 	int getQualite(); // not used; bonus un meme produit mais plusieurs qualités
 
-	bool isDone();
+	bool isDone(); // redfinition pas utilisé
 };

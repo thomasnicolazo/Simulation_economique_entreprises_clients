@@ -41,7 +41,7 @@ std::string Produits::getName(){
 	return name;
 }
 
-bool Produits::isDone(){
+bool Produits::isDone(){ 
 	return estFabrique;
 }
 
@@ -88,6 +88,6 @@ int ProduitFini::getQualite(){
 		return qualite;
 }
 
-bool ProduitFini::isDone(){
+bool ProduitFini::isDone(){ // redfinition pas utilisé
 	return estFabrique;
 }
