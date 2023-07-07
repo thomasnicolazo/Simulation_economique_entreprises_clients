@@ -45,6 +45,10 @@ bool Produits::isDone(){
 	return estFabrique;
 }
 
+std::string Produits::getEntrepriseName(){
+	return nameEntreprise;
+}
+
 void Produits::displayProduct(){
 	std::cout << "name :" << name << " prix : " << prix << " construction : " << fabriqueDepuis << "/" << dureeFabrication << std::endl;
 }
