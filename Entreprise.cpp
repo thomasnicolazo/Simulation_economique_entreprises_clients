@@ -57,6 +57,17 @@ std::deque<Produits> Entreprise::produire()
         //On instancie un nouveau produit du type de celui que fabrique l'entreprise...
         ProduitFini nouvProduit(produitFabrication.getName(),\
                                 produitFabrication.getDureeDeFabrication(),produitFabrication.getQualite());
+
+        //Evaluation du cout du produit.
+        double coutNouvProduit=0;
+        for(int i=0; i<productionTour.size();i++)
+        {//Le cout d'un produit est la somme des cout des produits utilisés pour le produire...
+            coutNouvProduit+=productionTour[i].getPrix();
+        }
+        coutNouvProduit+=nouvProduit.getDureeDeFabrication();//plus le cout de la fabrication...
+        coutNouvProduit+=nouvProduit.getQualite();//plus le prix de la qualité.
+        nouvProduit.setPrix(coutNouvProduit);
+
         //Et on le mets dans l'entrepôt.
         entrepotEntreprise.madeProductsPushBack(nouvProduit);
     }
