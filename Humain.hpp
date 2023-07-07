@@ -1,5 +1,3 @@
-#ifndef HUMAIN_HPP_INCLUDED
-#define HUMAIN_HPP_INCLUDED
 /***
  * Fichier Humain.hpp
  *
@@ -9,6 +7,7 @@
  *
  *
 */
+#pragma once
 #include "IActeur.hpp"
 #include "Produits.hpp"
 
@@ -26,15 +25,8 @@ public :
     //------Accesseurs de la classe-------//
     double getSalaire();
 
-
-
+    //------Méthode pour augmenter le compte d'un humain à chaque tour------//
     void salaireTour();
 
     void consommer(ProduitFini bien);
 };
-
-
-
-
-
-#endif // HUMAIN_HPP_INCLUDED

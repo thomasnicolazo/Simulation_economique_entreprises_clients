@@ -1,6 +1,4 @@
 #pragma once
-#ifndef PRODUITS_HPP_INCLUDED
-#define PRODUITS_HPP_INCLUDED
 #include <iostream>
 #include <string>
 
@@ -12,7 +10,7 @@ protected:
 	int dureeFabrication;
 	int fabriqueDepuis;
 	bool estFabrique;
-	
+
 public:
 	Produits(std::string nom, int dureeF);
 
@@ -31,14 +29,14 @@ public:
 	std::string getName();
 
 	bool isDone();
-	
+
 };
 
 class ProduitBrute: public Produits // composants de fabrication
 {
 public:
 	ProduitBrute(std::string _nom,int _dureeF);// : Produits( _nom, _dureeF);
-	
+
 	~ProduitBrute();
 };
 
@@ -48,7 +46,7 @@ private:
 	int qualite;
 public:
 	ProduitFini(std::string _nom,int _dureeF, int quality); // : Produits( _nom, _dureeF);
-	
+
 	~ProduitFini();
 
 	int getQualite();
@@ -56,4 +54,3 @@ public:
 	bool isDone();
 };
 
-#endif

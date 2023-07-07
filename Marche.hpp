@@ -1,6 +1,3 @@
-#ifndef MARCHE_HPP_INCLUDED
-#define MARCHE_HPP_INCLUDED
-
 /***
  * Fichier Marche.hpp
  *
@@ -9,6 +6,7 @@
  *
  *
 */
+#pragma once
 #include<deque>
 #include<stdlib.h>
 #include "Entreprise.hpp"
@@ -35,7 +33,3 @@ public:
     std::vector<Humain> getListHumain();
     void Tour();
 };
-
-
-
-#endif // MARCHE_HPP_INCLUDED

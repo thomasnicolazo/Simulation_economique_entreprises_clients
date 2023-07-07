@@ -16,12 +16,14 @@ Humain::~Humain(){};
 //------Accesseurs de la classe-------//
 double Humain::getSalaire()
 {
-    return salaire;
+    return this->salaire;
 }
 
+
+//------Méthode pour augmenter le compte d'un humain à chaque tour------//
 void Humain::salaireTour()
 {
-    acompte+=salaire;
+    this->acompte+=salaire;
 }
 
 void Humain::consommer(ProduitFini bien)

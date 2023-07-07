@@ -3,7 +3,7 @@
 #include "Produits.hpp"
 
 // class Produits
-	
+
 Produits::Produits(std::string nom,int dureeF){
 	dureeFabrication = dureeF;
 	fabriqueDepuis = 0;
@@ -45,7 +45,7 @@ bool ProduitFini::isDone(){
 }
 
 
-	
+
 
 
 // class ProduitBrute
@@ -57,7 +57,7 @@ ProduitBrute::ProduitBrute(std::string _nom,int _dureeF) : Produits::Produits( _
 	estFabrique = false;
 	name = _nom;
 }
-	
+
 ProduitBrute::~ProduitBrute(){}
 
 

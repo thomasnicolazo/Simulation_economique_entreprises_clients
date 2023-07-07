@@ -1,11 +1,10 @@
-#ifndef ENTREPRISE_HPP_INCLUDED
-#define ENTREPRISE_HPP_INCLUDED
 /***
  *  Fichier Entreprise.hpp
  *
  *
  *
 */
+#pragma once
 #include <deque>
 #include "IActeur.hpp"
 #include "Produits.hpp"
@@ -18,14 +17,14 @@ class Entreprise : public IActeur
 protected :
     std::string nomContact;
     int nbrEmploye;
-    double revenuTour;
-    double depenseTour;
     Entrepot entrepotEntreprise;
-    std::deque<Produits> productionTour;
+    std::deque<Produits> productionTour;//éléments consommés par l'entreprise pour produire.
     rechercheEtDev r_d;
-    ProduitFini produitFabrication;
+    ProduitFini produitFabrication;//Produit fabriqué par l'entreprise.
 
     //Attributs pour le rapport détaillé du tour.
+    double revenuTour;
+    double depenseTour;
     std::deque<Produits> produitsAchetesTour;
     std::deque<Produits> produitsVendusTour;
 
@@ -52,19 +51,24 @@ public:
     //-----Méthode pour obtenir les produits finis présents dans l'entrepôts-------//
     std::vector<Produits> getProduitsAVendre();
 
-    //-----Méthode de début de tour-----//
+    //-----Méthode de début de tour : réinitialise les attributs modifiés pendant le tour-----//
     void attributsTourZero();
 
+    //------Méthode de production de l'entreprise------//
+    //Permet de générer un exemplaire du produit de l'entreprise pendant le tour.
     std::deque<Produits> produire();
 
+    //------Méthode d'achat/commande de l'entreprise------//
+    //Permet d'acheter un produit auprès d'une autre entreprise
     void commande(Produits produit, Entreprise boite);
 
+    //------Méthode de vente------//
+    //Permet de supprimer un produit de l'entreprise et d'augmenter le compte de l'entreprise de son prix.
     void vendre(Produits produit);
 
+    //------Méthode de rapport------//
+    //Affiche les attributs de l'entreprise modifiés pendant le tour.
     void rapportDetailTour();
 
 
 };
-
-
-#endif // ENTREPRISE_HPP_INCLUDED

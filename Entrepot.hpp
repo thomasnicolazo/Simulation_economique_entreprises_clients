@@ -1,5 +1,5 @@
-#ifndef ENTREPOT_HPP_INCLUDED
-#define ENRTEPOT_HPP_INCLUDED
+
+#pragma once
 #include <string>
 #include <vector>
 #include <deque>
@@ -21,5 +21,3 @@ public:
 	void updateEntrepot();
 	bool isRawProducts(std::deque<Produits> listeRawProducts);
 };
-
-#endif

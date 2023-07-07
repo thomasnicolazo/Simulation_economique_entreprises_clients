@@ -1,11 +1,10 @@
-#ifndef IACTEUR_HPP_INCLUDED
-#define IACTEUR_HPP_INCLUDED
 /**
 * Fichier IActeur.hpp
 *
 * Définissant l'interface pour les acteurs..
 *
 */
+#pragma once
 #include "IComportement.hpp"
 #include<string>
 #include<iostream>
@@ -33,7 +32,3 @@ public:
     void achete();
 
 };
-
-
-
-#endif // IACTEUR_HPP_INCLUDED

@@ -1,4 +1,4 @@
-#pragma once 
+#pragma once
 #include "IComportement.hpp"
 #include "ComportementDecorateur.hpp"
 #include "Acheter.hpp"
