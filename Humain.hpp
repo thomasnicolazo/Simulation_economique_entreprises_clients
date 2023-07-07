@@ -34,6 +34,8 @@ public :
     void salaireTour();
 
     //-----Méthode pour permettre à un humain de consommer------//
+    /// l'utilisateur achete un produit dans la liste des produits mis en vente et retourne la position dans la liste
+    . Cela permettra de supprimer ce produit dans la liste des produits mis en vente.
     signed int consommer(std::vector<Produits> listeProduitsTermine);
 
     
