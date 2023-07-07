@@ -1,4 +1,3 @@
-#pragma once
 #include "ComportementEntreprise.hpp"
 
 ComportementEntreprise::ComportementEntreprise(Entreprise &entreprise){
