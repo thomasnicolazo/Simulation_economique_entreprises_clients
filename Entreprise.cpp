@@ -24,45 +24,45 @@ Entreprise::~Entreprise(){};
 //------Accesseurs de la classe------//
 int Entreprise::getNbrEmploye()
 {
-    return Entreprise::nbrEmploye;
+    return this->nbrEmploye;
 }
 double Entreprise::getRevenuTour()
 {
-    return Entreprise::revenuTour;
+    return this->revenuTour;
 }
 double Entreprise::getDepenseTour()
 {
-    return Entreprise::depenseTour;
+    return this->depenseTour;
 }
 Entrepot Entreprise::getEntrepot()
 {
-    return Entreprise::entrepotEntreprise;
+    return this->entrepotEntreprise;
 }
 rechercheEtDev Entreprise::getR_D()
 {
-    return Entreprise::r_d;
+    return this->r_d;
 }
 ProduitFini Entreprise::getProduitFabrication()
 {
-    return produitFabrication;
+    return this->produitFabrication;
 }
 std::deque<Produits> Entreprise::getProductionTour()
 {
-        return Entreprise::productionTour;
+        return this->productionTour;
 }
-std::deque<Produits> getProduitsAchetesTour()
+std::deque<Produits> Entreprise::getProduitsAchetesTour()
 {
-    return Entreprise::produitsAchetesTour;
+    return this->produitsAchetesTour;
 }
-std::deque<Produits> getProduitsVendusTour()
+std::deque<Produits> Entreprise::getProduitsVendusTour()
 {
-    return Entreprise::produitsVendusTour;
+    return this->produitsVendusTour;
 }
 
 //-----Méthode pour obtenir les produits finis présents dans l'entrepôts-------//
-std::vector<Produits> getProduitsAVendre()
+std::vector<Produits> Entreprise::getProduitsAVendre()
 {
-    return Entreprise::entrepotEntreprise.getProductsReadyToSell();
+    return entrepotEntreprise.getProductsReadyToSell();
 }
 
 
@@ -86,14 +86,14 @@ std::deque<Produits> Entreprise::produire()
 
 //------Méthode d'achat/commande de l'entreprise------//
 //Permet d'acheter un produit auprès d'une autre entreprise
-void Entreprise::commande(Produits produit, Entreprise::Entreprise boite)
+void Entreprise::commande(Produits produit, Entreprise boite)
 {
     //On cherche si le produit à acheter est bien dans l'entrepot de l'autre entreprise.
     Entrepot entrepotAutreBoite=boite.getEntrepot();
-    std::vector<ProduitFini> produitsAVendre=entrepotAutreBoite.getProductsReadyToSell();
+    std::vector<Produits> produitsAVendre=entrepotAutreBoite.getProductsReadyToSell();
     for(int i=0; i<produitsAVendre.size();i++)
     {
-        if(produitsAVendre[i].getName() == produit.name)//Si il est présent...
+        if(produitsAVendre[i].getName() == produit.getName())//Si il est présent...
         {
             boite.vendre(produit);//l'autre entreprise le vend...
             entrepotEntreprise.rawProductsPushBack(produit);//et on le met dans l'entrepôt de l'entreprise présente.
@@ -108,12 +108,12 @@ void Entreprise::commande(Produits produit, Entreprise::Entreprise boite)
 
 //-----Méthode de début de tour-----//
 //Réinitialise les attributs qui varient pendant le tour.
-void attributsTourZero()
+void Entreprise::attributsTourZero()
 {
-    Entreprise::revenuTour=0;
-    Entreprise::depenseTour=0;
-    Entreprise::produitsAchetesTour.clear();
-    Entreprise::produitsVendusTour.clear();
+    this->revenuTour=0;
+    this->depenseTour=0;
+    this->produitsAchetesTour.clear();
+    this->produitsVendusTour.clear();
 }
 
 void Entreprise::vendre(Produits produit)
@@ -121,10 +121,10 @@ void Entreprise::vendre(Produits produit)
     //On vérifie si le produit est présent dans l'entrepôt.
     bool estPresent=false;
     int indiceDuProduit=0;
-    std::vector<ProduitFini> produitsAVendre=Entreprise::getProduitAVendre();
+    std::vector<Produits> produitsAVendre=Entreprise::getProduitsAVendre();
     for(int i=0; i<produitsAVendre.size();i++)
     {
-        if(produitsAVendre[i].getName() == produit.name)
+        if(produitsAVendre[i].getName() == produit.getName())
         {
             estPresent=true;
             indiceDuProduit=i;
@@ -134,8 +134,8 @@ void Entreprise::vendre(Produits produit)
 
     if(estPresent)//Si le produit est présent, on ajoute son prix au compte de l'entreprise
     {               //et on le supprime de l'entrepôt.
-        acompte+=produitsAVendre[i].getPrix();
-        revenuTour+=produitsAVendre[i].getPrix();
+        acompte+=produitsAVendre[indiceDuProduit].getPrix();
+        revenuTour+=produitsAVendre[indiceDuProduit].getPrix();
         entrepotEntreprise.eraseBoughtProduct(produit.getName(), produit.getPrix());
         Entreprise::produitsVendusTour.push_back(produit);
     }
@@ -152,12 +152,12 @@ void Entreprise::rapportDetailTour()
     std::cout << "Produits achetés : ";
     for(int i=0;i< Entreprise::produitsAchetesTour.size();i++)
     {
-        Entreprise::getProduitsAchetesTour()[i].displayProduct();
+        produitsAchetesTour[i].displayProduct();
     }
     std::cout << "Produits vendus : ";
-    for(int i=0;i< Entreprise::produitsAchetesTour.size();i++)
+    for(int i=0;i< Entreprise::produitsVendusTour.size();i++)
     {
-        Entreprise::getProduitsVendusTour()[i].displayProduct();
+        produitsVendusTour[i].displayProduct();
     }
     std::cout << "###---Fin du rapport de l'entreprise " << Entreprise::getNom()<< "---###"<<std::endl;
 }

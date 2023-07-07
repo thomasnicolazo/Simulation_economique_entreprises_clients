@@ -1,10 +1,13 @@
+#ifndef MARCHE_HPP_INCLUDED
+#define MARCHE_HPP_INCLUDED
+
 /***
  * Fichier Marche.hpp
- * 
+ *
  * Singleton pour les opration de marchées entre entreprise et entre entreprise et client
- * 
- * 
- * 
+ *
+ *
+ *
 */
 #pragma once
 #include<deque>
@@ -34,3 +37,6 @@ public:
     void Tour();
 };
 
+
+
+#endif // MARCHE_HPP_INCLUDED

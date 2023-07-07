@@ -24,7 +24,11 @@ public :
     ~Humain();
     //------Accesseurs de la classe-------//
     double getSalaire();
+
+
+
     double salaireTour();
+
     void consommer(ProduitFini bien);
 
 };
