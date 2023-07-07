@@ -10,8 +10,9 @@
 #pragma once
 #include "IActeur.hpp"
 #include "Produits.hpp"
+#include "Entreprise.hpp"
 
-
+class IActeur;
 class Humain :public virtual  IActeur
 {
 private :
@@ -31,4 +32,5 @@ public :
 
     //-----Méthode pour permettre à un humain de consommer------//
     //Utilise la mthode d'entreprise "vendre" pour supprimer un produit de l'entrepot.
+    void consommer(Entreprise boite, ProduitFini bien);
 };
