@@ -10,12 +10,6 @@ Produits::Produits(std::string nom,int dureeF, std::string nomEntreprise ){ //co
 	estFabrique = false; // l'objet est il fini de construire
 	name = nom; // nom du produit // type de produit (Ex:pile)
 	nameEntreprise = nomEntreprise; // nom de l'entreprise qui a fabriqué le produit
-
-Produits::Produits(std::string nom,int dureeF){
-	dureeFabrication = dureeF;
-	fabriqueDepuis = 0;
-	estFabrique = false;
-	name = nom;
 }
 
 Produits::~Produits(){}
@@ -49,6 +43,10 @@ std::string Produits::getName(){
 
 bool Produits::isDone(){
 	return estFabrique;
+}
+
+std::string Produits::getEntrepriseName(){
+	return nameEntreprise;
 }
 
 void Produits::displayProduct(){
@@ -93,4 +91,3 @@ int ProduitFini::getQualite(){
 bool ProduitFini::isDone(){
 	return estFabrique;
 }
-
