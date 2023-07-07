@@ -25,7 +25,7 @@ private:
     Marche(Entreprise boite, Humain humain);
 public:
     ~Marche();
-    static Marche getInstance();
+    static Marche* getInstance();
     static void setInstance(Entreprise boite, Humain humain);
     std::vector<Produits> getListProduitsFini();
     std::vector<Produits> getListProduitsBrute();
