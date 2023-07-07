@@ -4,11 +4,11 @@
 
 // class Produits
 	
-Produits::Produits(std::string nom,int dureeF){
-	dureeFabrication = dureeF;
-	fabriqueDepuis = 0;
-	estFabrique = false;
-	name = nom;
+Produits::Produits(std::string nom,int dureeF){ //constructeur  Produits
+	dureeFabrication = dureeF;	//inittialise le temps de fabrication total du produit, futur developpement un meme type produit pourra avoir different temps de fabrication dû àddes problèmes.
+	fabriqueDepuis = 0; // durée depuis laquelle l'objet est en construction
+	estFabrique = false; // l'objet est il fini de construire
+	name = nom; // nom du produit // type de produit (Ex:pile)
 }
 
 Produits::~Produits(){}
@@ -29,7 +29,7 @@ int Produits::getDureeDeFabrication(){
 	return dureeFabrication;
 }
 
-void Produits::updateFabriqueDepuis(){
+void Produits::updateFabriqueDepuis(){ //à chaque fin de tour ou début de tour on appelle cette fonction pour incrémenter la progression de la construction de tout les produits 
 	fabriqueDepuis++;
 	if(fabriqueDepuis >= dureeFabrication){
 		estFabrique = true;
@@ -72,7 +72,7 @@ ProduitFini::ProduitFini(std::string _nom,int _dureeF, int quality) : Produits::
 	fabriqueDepuis = 0;
 	estFabrique = false;
 	name = _nom;
-	qualite = quality;
+	qualite = quality; // pas utilisé/implémenté pour le moment, un meme type de produit pourra avoir differentes qualités (peut etre un prix qui varira en fonction de cette qualité aussi)
 }
 
 ProduitFini::~ProduitFini(){}
