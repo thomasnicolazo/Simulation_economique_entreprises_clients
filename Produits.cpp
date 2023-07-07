@@ -54,7 +54,7 @@ void Produits::displayProduct(){
 
 // class ProduitBrute
 
-ProduitBrute::ProduitBrute(std::string _nom,int _dureeF) : Produits::Produits( _nom, _dureeF, _nomEntreprise)
+ProduitBrute::ProduitBrute(std::string _nom,int _dureeF, std::string _nomEntreprise) : Produits::Produits( _nom, _dureeF, _nomEntreprise)
 {
 	dureeFabrication = _dureeF;
 	fabriqueDepuis = 0;
