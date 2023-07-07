@@ -195,7 +195,7 @@ void Entreprise::action(std::vector<Entreprise> entreprisesProduitsTour){
                     else
                     {//On classe ces entreprises selon le prix auquel elles vendent le produit.
                         if(entreprisesVendantI[0].produitFabrication.getPrix()>\
-                           entreprisesProduitsTour[j].produitFabrication.getPrix())
+                           entreprisesProduitsTour[j].produitFabrication.getPrix())//
                         {
                             entreprisesVendantI.push_front(entreprisesProduitsTour[j]);
                         }
