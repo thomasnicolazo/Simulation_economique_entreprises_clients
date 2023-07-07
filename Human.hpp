@@ -10,7 +10,7 @@
 #pragma once
 
 #include "Produits.hpp"
-#include "Entreprise.hpp"
+
 
 
 class Humain 
