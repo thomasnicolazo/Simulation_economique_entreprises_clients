@@ -8,7 +8,7 @@
 #pragma once
 #include<stdlib.h>
 #include"IActeur.hpp"
-
+class IActeur;
 class IComportement
 {
 protected:
