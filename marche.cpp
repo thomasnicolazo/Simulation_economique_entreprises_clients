@@ -10,12 +10,12 @@
 
 #include "Marche.hpp"
 
-Marche::getInstance(){
+Marche *Marche::getInstance(){
     if(Marche::instance!=nullptr){
         return Marche::instance
     }
 }
-Marche::setInstance(Entreprise boite, Humain humain){
+void Marche::setInstance(Entreprise boite, Humain humain){
     if(Marche::instance == nullptr){
         Marche::instance=new Marche(Entreprise boite, Humain humain);
     }
@@ -38,19 +38,29 @@ Marche::~Marche()
     std::cout << "Un marché a été détruit." << std::endl;
     }
 
-Marche::getListProduitsFini()
+vector<Porduits> Marche::getListProduitsFini()
+{   
+    std::vector<Produits> results;
+    auto entreprises=this->boitesSurLeMarche;
+    For(p=entreprises.begin();p!=entreprise.end();p++){
+            
+            std::vector<Produits> tmp=p->getEntrepot()->getProductsReadyToSell();
+            results.insert(results.end(), tmp.begin(), tmp.end());
+    }
+    return results;
+    
+    
+ }
+
+std::vector<Produits>Marche::getListProduitsBrute()
     {
 
     }
-Marche::getListProduitsBrute()
+std::vector<IActeur>Marche::getListAcheteurs()
     {
 
     }
-Marche::getListAcheteurs()
-    {
-
-    }
-Marche::getListVendeurs(Produits produit)
+std::vector<IActeur>Marche::getListVendeurs(Produits produit)
     {
         for(auto p=this->instance.boitesSurLeMarche.begin();p!=this->instance.boitesSurLeMarche.end();p++){
             if(*p->getProduitFabrication()==produit.getName()){
@@ -59,10 +69,10 @@ Marche::getListVendeurs(Produits produit)
 
         }
     }
-Marche::getListEntreprise(){
+std::deque<IActeur>Marche::getListEntreprise(){
     return this->instance.boitesSurLeMarche;
 }
-Marche::getListHumain(){
+std::deque<Humain>Marche::getListHumain(){
     return this->instance.humainsSurLeMarche;
 }
 void Marche::Tour()

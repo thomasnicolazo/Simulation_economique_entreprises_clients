@@ -28,7 +28,7 @@ public :
 
     double salaireTour();
 
-    void consommer(ProduitFini bien);
+    bool consommer(Produits bien);
 
 };
 

@@ -6,10 +6,12 @@
  * **/
 #pragma once
 #include "IComportement.hpp"
+
 class Consommer: virtual IComportement
 {
 private:
-   
+//Hiding virtual attribute 
+   Humain* acteur;
 public:
     Consommer(Humain &h);
     ~Consommer();

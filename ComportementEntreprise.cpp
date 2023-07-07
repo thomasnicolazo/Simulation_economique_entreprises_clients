@@ -1,4 +1,3 @@
-#pragma once
 #include "ComportementEntreprise.hpp"
 
 ComportementEntreprise::ComportementEntreprise(Entreprise &entreprise){
@@ -30,5 +29,6 @@ void ComportementEntreprise::action(){
      * 
     */
     Entreprise * acteur=(Entreprise*)this->acteur;
+
 
 }

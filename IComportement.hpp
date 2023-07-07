@@ -9,6 +9,7 @@
 */
 #include<stdlib.h>
 #include"IActeur.hpp"
+#include <vector>
 class IActeur;
 class IComportement
 {

@@ -19,12 +19,18 @@ double Humain::getSalaire()
     return salaire;
 }
 
-void Humain::salaireTour()
+double Humain::salaireTour()
 {
     acompte+=salaire;
 }
 
-void Humain::consommer(ProduitFini bien)
+bool Humain::consommer(Produits bien)
 {
+    double p=bien.getPrix()   ;
+    if(this->acompte-p > 0){
+        this->acompte-=p;
+        return true;
+    }
+    return false;
 
 }
