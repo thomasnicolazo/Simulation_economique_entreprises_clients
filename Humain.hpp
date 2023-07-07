@@ -1,5 +1,3 @@
-#ifndef HUMAIN_HPP_INCLUDED
-#define HUMAIN_HPP_INCLUDED
 /***
  * Fichier Humain.hpp
  *
@@ -9,6 +7,7 @@
  *
  *
 */
+#pragma once
 #include "IActeur.hpp"
 #include "Produits.hpp"
 
@@ -37,4 +36,4 @@ public :
 
 
 
-#endif // HUMAIN_HPP_INCLUDED
+
