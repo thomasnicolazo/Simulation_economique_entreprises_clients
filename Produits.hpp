@@ -14,7 +14,7 @@ protected:
 	std::string nameEntreprise; // nom de l'entreprise qui a fabriqué le produit
 	
 public:
-	Produits(std::string nom, int dureeF);
+	Produits(std::string nom, int dureeF,std::string nomEntreprise);
 
 	~Produits();
 
@@ -40,7 +40,7 @@ public:
 class ProduitBrute: public Produits // composants de fabrication
 {
 public:
-	ProduitBrute(std::string _nom,int _dureeF);// : Produits( _nom, _dureeF);
+	ProduitBrute(std::string _nom,int _dureeF, std::string _nomEntreprise);// : Produits( _nom, _dureeF);
 	
 	~ProduitBrute();
 };
@@ -50,7 +50,7 @@ class ProduitFini : public Produits// produits avec valeurs ajoutées
 private:
 	int qualite;
 public:
-	ProduitFini(std::string _nom,int _dureeF, int quality); // : Produits( _nom, _dureeF);
+	ProduitFini(std::string _nom,int _dureeF, int quality,std::string _nomEntreprise); // : Produits( _nom, _dureeF);
 	
 	~ProduitFini();
 
