@@ -1,3 +1,12 @@
+/**
+ * Fichier Entreprise.cpp
+ *
+ *  Définis les méthodes des entreprises
+ *
+ *
+ *
+*/
+
 #include <iostream>
 #include <string>
 #include "Entrepot.hpp"
@@ -22,42 +31,15 @@ Entreprise::Entreprise(std::string nom_, std::string adresse_, double acompte_,\
 Entreprise::~Entreprise(){};
 
 //------Accesseurs de la classe------//
-int Entreprise::getNbrEmploye()
-{
-    return this->nbrEmploye;
-}
-double Entreprise::getRevenuTour()
-{
-    return this->revenuTour;
-}
-double Entreprise::getDepenseTour()
-{
-    return this->depenseTour;
-}
-Entrepot Entreprise::getEntrepot()
-{
-    return this->entrepotEntreprise;
-}
-rechercheEtDev Entreprise::getR_D()
-{
-    return this->r_d;
-}
-ProduitFini Entreprise::getProduitFabrication()
-{
-    return this->produitFabrication;
-}
-std::deque<Produits> Entreprise::getProductionTour()
-{
-        return this->productionTour;
-}
-std::deque<Produits> Entreprise::getProduitsAchetesTour()
-{
-    return this->produitsAchetesTour;
-}
-std::deque<Produits> Entreprise::getProduitsVendusTour()
-{
-    return this->produitsVendusTour;
-}
+int Entreprise::getNbrEmploye()                             {return this->nbrEmploye;}
+double Entreprise::getRevenuTour()                          {return this->revenuTour;}
+double Entreprise::getDepenseTour()                         {return this->depenseTour;}
+Entrepot Entreprise::getEntrepot()                          {return this->entrepotEntreprise;}
+rechercheEtDev Entreprise::getR_D()                         {return this->r_d;}
+ProduitFini Entreprise::getProduitFabrication()             {return this->produitFabrication;}
+std::deque<Produits> Entreprise::getProductionTour()        {return this->productionTour;}
+std::deque<Produits> Entreprise::getProduitsAchetesTour()   {return this->produitsAchetesTour;}
+std::deque<Produits> Entreprise::getProduitsVendusTour()    {return this->produitsVendusTour;}
 
 //-----Méthode pour obtenir les produits finis présents dans l'entrepôts-------//
 std::vector<Produits> Entreprise::getProduitsAVendre()
@@ -65,10 +47,8 @@ std::vector<Produits> Entreprise::getProduitsAVendre()
     return entrepotEntreprise.getProductsReadyToSell();
 }
 
-
-
-
 //------Méthode de production de l'entreprise------//
+//Permet de générer un exemplaire du produit de l'entreprise pendant le tour.
 std::deque<Produits> Entreprise::produire()
 {
     //Si les produits nécessaire à la produciton sont dans l'entrepôt...
@@ -76,7 +56,18 @@ std::deque<Produits> Entreprise::produire()
     {
         //On instancie un nouveau produit du type de celui que fabrique l'entreprise...
         ProduitFini nouvProduit(produitFabrication.getName(),\
-                                produitFabrication.getDureeDeFabrication(),produitFabrication.getQualite());
+                                produitFabrication.getDureeDeFabrication(),produitFabrication.getQualite(),getNom());
+
+        //Evaluation du cout du produit.
+        double coutNouvProduit=0;
+        for(int i=0; i<productionTour.size();i++)
+        {//Le cout d'un produit est la somme des cout des produits utilisés pour le produire...
+            coutNouvProduit+=productionTour[i].getPrix();
+        }
+        coutNouvProduit+=nouvProduit.getDureeDeFabrication();//plus le cout de la fabrication...
+        coutNouvProduit+=nouvProduit.getQualite();//plus le prix de la qualité.
+        nouvProduit.setPrix(coutNouvProduit);
+
         //Et on le mets dans l'entrepôt.
         entrepotEntreprise.madeProductsPushBack(nouvProduit);
     }
@@ -116,6 +107,9 @@ void Entreprise::attributsTourZero()
     this->produitsVendusTour.clear();
 }
 
+
+//------Méthode de vente------//
+//Permet de supprimer un produit de l'entreprise et d'augmenter le compte de l'entreprise de son prix.
 void Entreprise::vendre(Produits produit)
 {
     //On vérifie si le produit est présent dans l'entrepôt.
@@ -142,7 +136,8 @@ void Entreprise::vendre(Produits produit)
 
 }
 
-
+//------Méthode de rapport------//
+//Affiche les attributs de l'entreprise modifiés pendant le tour.
 void Entreprise::rapportDetailTour()
 {
     std::cout << "###---Rapport détaillé de l'entreprise " << Entreprise::getNom()<< "---###"<<std::endl;

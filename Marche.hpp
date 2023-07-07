@@ -1,6 +1,3 @@
-#ifndef MARCHE_HPP_INCLUDED
-#define MARCHE_HPP_INCLUDED
-
 /***
  * Fichier Marche.hpp
  *
@@ -15,8 +12,10 @@
 #include "Entreprise.hpp"
 #include "Humain.hpp"
 #include "Produits.hpp"
+#include "IActeur.hpp"
 #include <vector>
 
+class IActeur;
 class Marche
 {
 private:
@@ -37,7 +36,3 @@ public:
     std::deque<Humain> getListHumain();
     void Tour();
 };
-
-
-
-#endif // MARCHE_HPP_INCLUDED

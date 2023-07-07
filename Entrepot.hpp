@@ -1,5 +1,5 @@
-#ifndef ENTREPOT_HPP_INCLUDED
-#define ENRTEPOT_HPP_INCLUDED
+
+#pragma once
 #include <string>
 #include <vector>
 #include <deque>
@@ -23,5 +23,3 @@ public:
 	bool isProductInProduction(); // est ce que l'entreprise a des prouit en cours de fabrication
 	void displayAllProductsFini(); // display all
 };
-
-#endif

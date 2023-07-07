@@ -24,16 +24,11 @@ public :
     //------Accesseurs de la classe-------//
     double getSalaire();
 
-
-
-    double salaireTour();
+    //------Méthode pour augmenter le compte d'un humain à chaque tour------//
+    void salaireTour();
 
     bool consommer(Produits bien);
 
+    //-----Méthode pour permettre à un humain de consommer------//
+    //Utilise la mthode d'entreprise "vendre" pour supprimer un produit de l'entrepot.
 };
-
-
-
-
-
-

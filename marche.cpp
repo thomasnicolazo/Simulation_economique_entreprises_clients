@@ -1,11 +1,11 @@
 /**
  * Fichier Marche.hpp
- * 
+ *
  *  Définis le comportement des marchés
- * 
+ *
  *  singleton
- * 
- * 
+ *
+ *
 */
 
 #include "Marche.hpp"
@@ -65,7 +65,7 @@ std::vector<IActeur>Marche::getListVendeurs(Produits produit)
     {
         for(auto p=this->instance.boitesSurLeMarche.begin();p!=this->instance.boitesSurLeMarche.end();p++){
             if(*p->getProduitFabrication()==produit.getName()){
-                //todo add to a list 
+                //todo add to a list
             }
 
         }

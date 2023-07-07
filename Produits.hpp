@@ -1,6 +1,4 @@
 #pragma once
-#ifndef PRODUITS_HPP_INCLUDED
-#define PRODUITS_HPP_INCLUDED
 #include <iostream>
 #include <string>
 
@@ -14,6 +12,10 @@ protected:
 	bool estFabrique; // vrai: si le produit est fini d'étre fait; faux sinon
 	std::string nameEntreprise; // nom de l'entreprise qui a fabriqué le produit
 	
+	int dureeFabrication;
+	int fabriqueDepuis;
+	bool estFabrique;
+
 public:
 	Produits(std::string nom, int dureeF);
 
@@ -36,13 +38,15 @@ public:
 	std::string getEntrepriseName(); // return the name of the company which made the product
 
 	void displayProduct(); // affiche le nom puis le prix
+	bool isDone();
+
 };
 
 class ProduitBrute: public Produits // composants de fabrication
 {
 public:
 	ProduitBrute(std::string _nom,int _dureeF);// : Produits( _nom, _dureeF);
-	
+
 	~ProduitBrute();
 };
 
@@ -52,7 +56,7 @@ private:
 	int qualite;
 public:
 	ProduitFini(std::string _nom,int _dureeF, int quality); // : Produits( _nom, _dureeF);
-	
+
 	~ProduitFini();
 
 	int getQualite(); // not used; bonus un meme produit mais plusieurs qualités
@@ -60,4 +64,3 @@ public:
 	bool isDone();
 };
 
-#endif

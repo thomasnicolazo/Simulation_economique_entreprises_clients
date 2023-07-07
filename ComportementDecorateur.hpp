@@ -1,8 +1,8 @@
 /**
  * Fichier ComportementDecorateur.h
- * 
+ *
  * Implémentation du décorateur pour les comportements
- * 
+ *
  * **/
 #pragma once
 #include "IComportement.hpp"

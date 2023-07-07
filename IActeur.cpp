@@ -1,8 +1,10 @@
-#include <iostream>
+#include<string>
+#include<iostream>
 #include <deque>
 #include <vector>
 #include "IActeur.hpp"
 #include "Entrepot.hpp"
+#include "IComportement.hpp"
 
 
 //-----Méthodes de la classe IActeur------//
@@ -29,4 +31,3 @@ int IActeur::getAcompte()
 {
     return this->acompte;
 }
-

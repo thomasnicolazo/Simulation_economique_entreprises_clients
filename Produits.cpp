@@ -10,6 +10,12 @@ Produits::Produits(std::string nom,int dureeF, std::string nomEntreprise ){ //co
 	estFabrique = false; // l'objet est il fini de construire
 	name = nom; // nom du produit // type de produit (Ex:pile)
 	nameEntreprise = nomEntreprise; // nom de l'entreprise qui a fabriqué le produit
+
+Produits::Produits(std::string nom,int dureeF){
+	dureeFabrication = dureeF;
+	fabriqueDepuis = 0;
+	estFabrique = false;
+	name = nom;
 }
 
 Produits::~Produits(){}
@@ -49,7 +55,7 @@ void Produits::displayProduct(){
 	std::cout << "name :" << name << " prix : " << prix << " construction : " << fabriqueDepuis << "/" << dureeFabrication << std::endl;
 }
 
-	
+
 
 
 // class ProduitBrute
@@ -62,7 +68,7 @@ ProduitBrute::ProduitBrute(std::string _nom,int _dureeF, std::string _nomEntrepr
 	name = _nom;
 	nameEntreprise = _nomEntreprise;
 }
-	
+
 ProduitBrute::~ProduitBrute(){}
 
 

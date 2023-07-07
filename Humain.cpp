@@ -16,17 +16,25 @@ Humain::~Humain(){};
 //------Accesseurs de la classe-------//
 double Humain::getSalaire()
 {
-    return salaire;
+    return this->salaire;
 }
 
+
+//------Méthode pour augmenter le compte d'un humain à chaque tour------//
 double Humain::salaireTour()
 {
-    acompte+=salaire;
+    this->acompte+=salaire;
 }
 
-bool Humain::consommer(Produits bien)
+//-----Méthode pour permettre à un humain de consommer------//
+//Utilise la mthode d'entreprise "vendre" pour supprimer un produit de l'entrepot.
+bool Humain::consommer(Entreprise boite, Produits bien)
 {
-    double p=bien.getPrix()   ;
+    if (acompte>bien.getPrix())
+    {
+        boite.vendre(bien);
+        acompte-=bien.getPrix();
+    }    double p=bien.getPrix()   ;
     if(this->acompte-p > 0){
         this->acompte-=p;
         return true;
