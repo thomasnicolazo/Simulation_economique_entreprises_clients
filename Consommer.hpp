@@ -6,6 +6,7 @@
  * **/
 #pragma once
 #include "IComportement.hpp"
+#include "Humain.hpp"
 class Consommer: virtual IComportement
 {
 private:

@@ -8,7 +8,7 @@
 #include "IComportement.hpp"
 #include<string>
 #include<iostream>
-#include"Marche.hpp"
+//#include"Marche.hpp"
 
 class IActeur
 {
@@ -18,7 +18,7 @@ protected :
     std::string nom;
     std::string adresse;
     double acompte;
-    IComportement comportements;
+    //IComportement comportements;
 
 public:
     //------Constructeurs de la classe------//
