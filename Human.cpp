@@ -50,6 +50,8 @@ signed int Humain::consommer(std::vector<Produits> listeProduitsTermine){
 
 }
 
+// EN DESSOUS pas utilisé
+
 //-----Méthode pour permettre à un humain de consommer------//
 //Utilise la mthode d'entreprise "vendre" pour supprimer un produit de l'entrepot.
 
