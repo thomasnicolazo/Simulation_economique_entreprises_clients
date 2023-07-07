@@ -13,7 +13,7 @@
 
 enum rechercheEtDev {OUI, NON};
 
-class Entreprise : public IActeur
+class Entreprise : public virtual IActeur
 {
 protected :
     std::string nomContact;

@@ -13,7 +13,7 @@
 #include "Produits.hpp"
 
 
-class Humain :  IActeur
+class Humain :public virtual  IActeur
 {
 private :
     double salaire;
@@ -26,6 +26,7 @@ public :
     double getSalaire();
     double salaireTour();
     void consommer(ProduitFini bien);
+
 };
 
 

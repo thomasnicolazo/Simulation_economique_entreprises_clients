@@ -8,12 +8,16 @@
 #include "ComportementDecorateur.hpp"
 #include "Consommer.hpp"
 #include "Humain.hpp"
-class ComportementHumain :  virtual IComportement, ComportementDecorateur
+class IComportement;
+class ComportementDecorateur;
+class ComportementHumain :  public virtual IComportement,  virtual ComportementDecorateur
 {
 
- 
+private:
+//obligate to name hide ?
+    Humain * acteur;
 public:
-    ComportementHumain(Humain &h);
+    ComportementHumain(Humain* h);
     ~ComportementHumain();
     void action() override;
    

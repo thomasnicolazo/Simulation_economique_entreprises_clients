@@ -3,7 +3,7 @@
 
 ComportementEntreprise::ComportementEntreprise(Entreprise &entreprise){
 
-    this->acteur=&entreprise;
+    this->acteur=(Entreprise*)&entreprise;
 
 
 };

@@ -3,10 +3,8 @@
 
 
 
-ComportementHumain::ComportementHumain(Humain &h){
-    this->acteur=&h;
-
-
+ComportementHumain::ComportementHumain(Humain* h){
+    this->acteur=(Humain*)h;
 };
 ComportementHumain::~ComportementHumain()=default;
 
