@@ -7,14 +7,17 @@
 Entrepot::Entrepot(){}
 Entrepot::~Entrepot(){}
 
+// materiaux de construction
 void Entrepot::rawProductsPushBack(Produits product){
 	vectorProduitBrute.push_back(product);
 }
 
+// produits fabriqués par l'entreprise
 void Entrepot::madeProductsPushBack(Produits product){
 	vectorProduitFini.push_back(product);
 }
 
+// not used for the moment
 
 Produits* Entrepot::getProductWithLowerPrice(std::string name, std::vector<Produits> liste){
 	Produits* productWithLowestPrice = nullptr;
@@ -31,6 +34,9 @@ Produits* Entrepot::getProductWithLowerPrice(std::string name, std::vector<Produ
 	return productWithLowestPrice;
 }
 
+/* produits fini de fabriquer qui sont donc disponibles à la vente
+regarde dans la liste produitFini si un produit est fini grace à la méthode isDone
+*/
 std::vector<Produits> Entrepot::getProductsReadyToSell(){
 	std::vector<Produits> productsReadyToSell;
 	for(int i=0; i<vectorProduitFini.size();i++){
@@ -41,6 +47,7 @@ std::vector<Produits> Entrepot::getProductsReadyToSell(){
 	return productsReadyToSell;
 }
 
+//  si un produit a été acheté par un client on le supprime de l'inventaire de l'entreprise
 void Entrepot::eraseBoughtProduct(std::string name,double price){
 	int confirmation =0;
 	for(int i=0; i<vectorProduitFini.size();i++){
