@@ -1,6 +1,7 @@
 # Prerequisites
 *.d
-
+.vscode/settings.json
+.gitignore
 # Compiled Object files
 *.slo
 *.lo
