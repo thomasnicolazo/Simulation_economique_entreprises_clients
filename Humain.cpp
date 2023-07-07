@@ -21,7 +21,7 @@ double Humain::getSalaire()
 
 
 //------Méthode pour augmenter le compte d'un humain à chaque tour------//
-double Humain::salaireTour()
+void Humain::salaireTour()
 {
     this->acompte+=salaire;
 }
@@ -34,11 +34,36 @@ bool Humain::consommer(Entreprise boite, Produits bien)
     {
         boite.vendre(bien);
         acompte-=bien.getPrix();
-    }    double p=bien.getPrix()   ;
+    }
+    double p=bien.getPrix()   ;
     if(this->acompte-p > 0){
         this->acompte-=p;
         return true;
     }
     return false;
+
+}
+
+/*
+//------Méthode décrivant les actions que réalise un humain pendant un tour------//
+void Humain::action(){
+    //first clear list of actions
+    Humain* humanActor=(Humain*)this->acteur;
+    if(this->comportements.size()>0){
+        this->comportements.clear();
+    }
+    //Ici, on utilise uniquement l'action "consom".
+    IComportement *consom=(IComportement*)new Consommer((Humain&)this->acteur);
+    this->comportements.push_back(consom);
+
+    for(auto p=this->comportements.begin();p!=this->comportements.end();p++){
+        int accompte=this->acteur->getAcompte();
+        (*p)->action();
+        if(this->acteur->getAcompte()>0 && accompte>this->acteur->getAcompte()){
+            //On essaye d'acheter quelque chose, on suppose qu'on a réussi à acheter.
+            IComportement *consom=(IComportement*)new Consommer((Humain&)this->acteur);
+            this->comportements.push_back(consom);
+        }
+    }*/
 
 }

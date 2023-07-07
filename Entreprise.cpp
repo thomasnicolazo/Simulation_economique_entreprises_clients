@@ -156,3 +156,60 @@ void Entreprise::rapportDetailTour()
     }
     std::cout << "###---Fin du rapport de l'entreprise " << Entreprise::getNom()<< "---###"<<std::endl;
 }
+
+
+//------Méthode décrivant les actions que réalise une entreprise pendant un tour------//
+void Entreprise::action(std::vector<Entreprise> entreprisesProduitsTour){
+    /**
+     * une entreprise achete si elle ne produit pas
+     * Une entreprise produit un produit par tour
+     *
+     * Une entreprise achete le minimum de produit pour produire une unité de produit fini
+     * Si elle lui reste un acompte r&d...?
+     *
+     *
+    */
+
+    //Entreprise * acteur=(Entreprise*)this->acteur;
+
+
+    //Si l'entreprise a les matériaux pour produire...
+    if(entrepotEntreprise.isRawProducts(productionTour))
+    {
+        Entreprise::produire();//elle produit...
+    }
+    else
+    {//sinon, elle achete les produits nécessaires à la production.
+        for(int i=0;i<productionTour.size();i++)
+        {
+            //On fait une liste des entreprises vendant chaque produit.
+            std::deque<Entreprise> entreprisesVendantI;
+            for (int j=0; j<entreprisesProduitsTour.size();j++)
+            {
+                if(productionTour[i].getName()==entreprisesProduitsTour[j].produitFabrication.getName())
+                {
+                    if(entreprisesVendantI.empty())
+                    {
+                        entreprisesVendantI.push_back(entreprisesProduitsTour[j]);
+                    }
+                    else
+                    {//On classe ces entreprises selon le prix auquel elles vendent le produit.
+                        if(entreprisesVendantI[0].produitFabrication.getPrix()>\
+                           entreprisesProduitsTour[j].produitFabrication.getPrix())
+                        {
+                            entreprisesVendantI.push_front(entreprisesProduitsTour[j]);
+                        }
+                        else
+                        {
+                            entreprisesVendantI.push_back(entreprisesProduitsTour[j]);
+                        }
+                    }
+                }
+            }
+            //puis, on commande ce produit à l'entreprise la moins chère.
+            commande(productionTour[i], entreprisesVendantI[0]);
+        }
+    }
+
+
+}

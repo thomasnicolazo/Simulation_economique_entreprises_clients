@@ -73,5 +73,8 @@ public:
     //Affiche les attributs de l'entreprise modifiés pendant le tour.
     void rapportDetailTour();
 
+    //------Méthode décrivant les actions que réalise une entreprise pendant un tour------//
+    void action(std::vector<Entreprise> entreprisesProduitsTour) /*override*/;
+
 
 };

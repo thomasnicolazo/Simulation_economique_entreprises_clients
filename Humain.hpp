@@ -28,9 +28,12 @@ public :
     //------Méthode pour augmenter le compte d'un humain à chaque tour------//
     void salaireTour();
 
-    bool consommer(Produits bien);
+    //bool consommer(Produits bien);
 
     //-----Méthode pour permettre à un humain de consommer------//
-    //Utilise la mthode d'entreprise "vendre" pour supprimer un produit de l'entrepot.
-    void consommer(Entreprise boite, ProduitFini bien);
+    //Utilise la méthode d'entreprise "vendre" pour supprimer un produit de l'entrepot.
+    bool consommer(Entreprise boite, ProduitFini bien);
+
+    //------Méthode décrivant les actions que réalise un humain pendant un tour------//
+    void action() override;
 };
