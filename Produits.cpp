@@ -45,7 +45,7 @@ bool Produits::isDone(){
 }
 
 void Produits::displayProduct(){
-	std::cout << "name :" << name << " prix : " << prix << std::endl;
+	std::cout << "name :" << name << " prix : " << prix << " construction : " << fabriqueDepuis << "/" << dureeFabrication << std::endl;
 }
 
 	
