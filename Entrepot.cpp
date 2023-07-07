@@ -64,7 +64,7 @@ void Entrepot::eraseBoughtProduct(std::string name,double price){
 	}
 }
 
-void Entrepot::updateEntrepot(){
+void Entrepot::updateEntrepot(){ // pour tous les produits de l'entrepot, on update leur avancement de consttruction
 	for(int i=0;i<vectorProduitFini.size();i++){
 		vectorProduitFini[i].updateFabriqueDepuis();
 	}
