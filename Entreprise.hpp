@@ -31,6 +31,7 @@ protected :
     std::deque<Produits> produitsVendusTour;
 
 
+
 public:
     //------Constructeurs de la classe------//
     Entreprise(std::string nom_, std::string adresse_, double acompte_,\
