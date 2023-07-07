@@ -9,29 +9,30 @@ class Produits
 protected:
 	double prix;
 	std::string name;
-	int dureeFabrication;
-	int fabriqueDepuis;
-	bool estFabrique;
+	int dureeFabrication; // temps nécéssaire à la fabrication du produit
+	int fabriqueDepuis; // temps depuis le commencent de la favrication (commence à 0)
+	bool estFabrique; // vrai: si le produit est fini d'étre fait; faux sinon
 	
 public:
 	Produits(std::string nom, int dureeF);
 
 	~Produits();
 
-	void setPrix(double price);
+	void setPrix(double price); // defini le porix d'un  produit
 
 	double getPrix();
 
-	void setDureedeFabrication (int dureeF);
+	void setDureedeFabrication (int dureeF); // methode bonus  si on veut changer le temps de fabrication d'un produit specifique(Ex: le niveau de la R&D augmente)
 
-	int getDureeDeFabrication();
+	int getDureeDeFabrication(); // methode qui renvoie la durée de fabrication
 
-	void updateFabriqueDepuis();
+	void updateFabriqueDepuis();// à chaque fin de tour cette methode est appelé pour tout les produits pour incrémenter la variable fabriqué depuis.
 
 	std::string getName();
 
-	bool isDone();
+	bool isDone(); // le prroduit est fini si isDone est true; sinon false
 	
+	void displayProduct(); // affiche le nom puis le prix
 };
 
 class ProduitBrute: public Produits // composants de fabrication
@@ -51,7 +52,7 @@ public:
 	
 	~ProduitFini();
 
-	int getQualite();
+	int getQualite(); // not used; bonus un meme produit mais plusieurs qualité
 
 	bool isDone();
 };

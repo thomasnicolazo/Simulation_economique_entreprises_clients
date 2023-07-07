@@ -31,7 +31,7 @@ int Produits::getDureeDeFabrication(){
 
 void Produits::updateFabriqueDepuis(){
 	fabriqueDepuis++;
-	if(fabriqueDepuis == dureeFabrication){
+	if(fabriqueDepuis >= dureeFabrication){
 		estFabrique = true;
 	}
 }
@@ -40,10 +40,13 @@ std::string Produits::getName(){
 	return name;
 }
 
-bool ProduitFini::isDone(){
+bool Produits::isDone(){
 	return estFabrique;
 }
 
+void Produits::displayProduct(){
+	std::cout << "name :" << name << " prix : " << prix << std::endl;
+}
 
 	
 
