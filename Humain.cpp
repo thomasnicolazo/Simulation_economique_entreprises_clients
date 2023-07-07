@@ -21,18 +21,24 @@ double Humain::getSalaire()
 
 
 //------Méthode pour augmenter le compte d'un humain à chaque tour------//
-void Humain::salaireTour()
+double Humain::salaireTour()
 {
     this->acompte+=salaire;
 }
 
 //-----Méthode pour permettre à un humain de consommer------//
 //Utilise la mthode d'entreprise "vendre" pour supprimer un produit de l'entrepot.
-void Humain::consommer(Entreprise boite, ProduitFini bien)
+bool Humain::consommer(Entreprise boite, Produits bien)
 {
     if (acompte>bien.getPrix())
     {
         boite.vendre(bien);
         acompte-=bien.getPrix();
+    }    double p=bien.getPrix()   ;
+    if(this->acompte-p > 0){
+        this->acompte-=p;
+        return true;
     }
+    return false;
+
 }

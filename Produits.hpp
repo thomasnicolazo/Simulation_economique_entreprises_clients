@@ -58,4 +58,3 @@ public:
 
 	bool isDone();
 };
-

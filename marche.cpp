@@ -15,13 +15,14 @@ Marche* Marche::getInstance(){
         return Marche::instance;
     }
 }
+
 void Marche::setInstance(Entreprise boite, Humain humain){
     if(Marche::instance == nullptr){
-        Marche::instance=new Marche(Entreprise boite, Humain humain);
+        Marche::instance=new Marche(boite,humain);
     }
     else{
-        Marche::instance.humainsSurLeMarche.push_back(humain);
-        Marche::instance.boitesSurLeMarche.push_back(boite);
+        Marche::instance->humainsSurLeMarche.push_back(humain);
+        Marche::instance->boitesSurLeMarche.push_back(boite);
     }
 }
 
@@ -38,35 +39,57 @@ Marche::~Marche()
     std::cout << "Un marché a été détruit." << std::endl;
     }
 
-Marche::getListProduitsFini()
-    {
-
+std::vector<Produits> Marche::getListProduitsFini()
+{   
+    std::vector<Produits> results;
+    auto entreprises=this->boitesSurLeMarche;
+    for(auto p=entreprises.begin();p!=entreprises.end();p++){
+            
+            std::vector<Produits> tmp=p->getEntrepot().getProductsReadyToSell();
+            results.insert(results.end(), tmp.begin(), tmp.end());
     }
-Marche::getListProduitsBrute()
-    {
+    return results;
+    
+    
+ }
 
-    }
-Marche::getListAcheteurs()
-    {
+std::vector<Produits>Marche::getListProduitsBrute()
+{
+ //useless
 
-    }
-Marche::getListVendeurs(Produits produit)
+}
+std::vector<IActeur>Marche::getListAcheteurs()
+{
+    //useless ?
+}
+std::vector<IActeur>Marche::getListVendeurs(Produits produit)
     {
-        for(auto p=this->instance.boitesSurLeMarche.begin();p!=this->instance.boitesSurLeMarche.end();p++){
-            if(*p->getProduitFabrication()==produit.getName()){
+        for(auto p=this->instance->boitesSurLeMarche.begin();p!=this->instance->boitesSurLeMarche.end();p++){
+            if(p->getProduitFabrication().getName()==produit.getName()){
                 //todo add to a list
             }
 
         }
     }
-Marche::getListEntreprise(){
-    return this->instance.boitesSurLeMarche;
+std::deque<Entreprise>Marche::getListEntreprise(){
+    return this->instance->boitesSurLeMarche;
 }
-Marche::getListHumain(){
-    return this->instance.humainsSurLeMarche;
+std::deque<Humain>Marche::getListHumain(){
+    return this->instance->humainsSurLeMarche;
 }
 void Marche::Tour()
-    {
+{
+    /**
+     * Point d'entrée de la simulation
+     * chaque tour les actions sont réalisés d'abord par les humain puis par les entreprises
+    */
+        for(auto p=this->humainsSurLeMarche.begin();p!=this->humainsSurLeMarche.end();p++){
+            (*p).comportements.action();
 
-    }
+        }
+         for(auto p=this->boitesSurLeMarche.begin();p!=this->boitesSurLeMarche.end();p++){
+            (*p).comportements.action();
+
+        }
+}
 

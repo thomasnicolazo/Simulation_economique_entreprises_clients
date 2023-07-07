@@ -12,8 +12,9 @@
 
 enum rechercheEtDev {OUI, NON};
 
+
 class IActeur;
-class Entreprise : public IActeur
+class Entreprise :  public virtual IActeur
 {
 protected :
     std::string nomContact;
@@ -28,6 +29,7 @@ protected :
     double depenseTour;
     std::deque<Produits> produitsAchetesTour;
     std::deque<Produits> produitsVendusTour;
+
 
 
 public:

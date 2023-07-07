@@ -8,7 +8,7 @@
 #include "IComportement.hpp"
 #include "vector"
 
-class ComportementDecorateur : virtual IComportement
+class ComportementDecorateur : public virtual IComportement 
 {
 protected:
     std::vector<IComportement*> comportements;

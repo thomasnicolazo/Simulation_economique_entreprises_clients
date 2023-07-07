@@ -11,6 +11,7 @@
 #include<stdlib.h>
 #include "Entreprise.hpp"
 #include "Humain.hpp"
+#include "Produits.hpp"
 #include "IActeur.hpp"
 #include <vector>
 
@@ -18,7 +19,7 @@ class IActeur;
 class Marche
 {
 private:
-    static Marche instance;
+    static Marche* instance;
     std::deque<Entreprise> boitesSurLeMarche;
     std::deque<Humain> humainsSurLeMarche;
 private:
@@ -31,7 +32,7 @@ public:
     std::vector<Produits> getListProduitsBrute();
     std::vector<IActeur> getListAcheteurs();
     std::vector<IActeur> getListVendeurs(Produits p);
-    std::vector<Entreprise> getListEntreprise();
-    std::vector<Humain> getListHumain();
+    std::deque<Entreprise> getListEntreprise();
+    std::deque<Humain> getListHumain();
     void Tour();
 };

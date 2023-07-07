@@ -11,12 +11,12 @@
 class IActeur;
 class IComportement
 {
-protected:
+public:
 
 	IActeur* acteur;
 public:
 	virtual void action();
-	IComportement();
 	virtual ~IComportement();
+	IComportement();
 
 };

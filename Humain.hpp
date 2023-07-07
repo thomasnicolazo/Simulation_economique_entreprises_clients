@@ -13,11 +13,10 @@
 #include "Entreprise.hpp"
 
 class IActeur;
-class Humain : public IActeur
+class Humain :public virtual  IActeur
 {
 private :
     double salaire;
-
 public :
     //------Constructeurs de la classe------//
     Humain(std::string nom_, std::string adresse_, double acompte_, double salaire_);
@@ -28,6 +27,8 @@ public :
 
     //------Méthode pour augmenter le compte d'un humain à chaque tour------//
     void salaireTour();
+
+    bool consommer(Produits bien);
 
     //-----Méthode pour permettre à un humain de consommer------//
     //Utilise la mthode d'entreprise "vendre" pour supprimer un produit de l'entrepot.

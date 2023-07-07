@@ -91,4 +91,3 @@ int ProduitFini::getQualite(){
 bool ProduitFini::isDone(){
 	return estFabrique;
 }
-

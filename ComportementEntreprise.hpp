@@ -4,10 +4,13 @@
 #include "Acheter.hpp"
 #include "Vendre.hpp"
 #include "Produire.hpp"
+#include "Marche.hpp"
 
-class ComportementEntreprise : virtual IComportement, ComportementDecorateur
+class ComportementEntreprise :public virtual IComportement, public virtual ComportementDecorateur
 {
-
+private:
+//obligate to  hide name?
+    Entreprise* acteur;
 public:
     ComportementEntreprise(Entreprise &e);
     ~ComportementEntreprise();
