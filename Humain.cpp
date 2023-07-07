@@ -26,7 +26,13 @@ void Humain::salaireTour()
     this->acompte+=salaire;
 }
 
-void Humain::consommer(ProduitFini bien)
+//-----Méthode pour permettre à un humain de consommer------//
+//Utilise la mthode d'entreprise "vendre" pour supprimer un produit de l'entrepot.
+void Humain::consommer(Entreprise boite, ProduitFini bien)
 {
-
+    if (acompte>bien.getPrix())
+    {
+        boite.vendre(bien);
+        acompte-=bien.getPrix();
+    }
 }

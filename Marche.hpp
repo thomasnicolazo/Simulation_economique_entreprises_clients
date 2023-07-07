@@ -11,6 +11,7 @@
 #include<stdlib.h>
 #include "Entreprise.hpp"
 #include "Humain.hpp"
+#include "IActeur.hpp"
 #include <vector>
 
 class Marche
