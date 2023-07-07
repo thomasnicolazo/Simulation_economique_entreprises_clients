@@ -11,7 +11,7 @@
 #include "IActeur.hpp"
 #include "Produits.hpp"
 
-
+class IActeur;
 class Humain : public IActeur
 {
 private :

@@ -12,6 +12,7 @@
 
 enum rechercheEtDev {OUI, NON};
 
+class IActeur;
 class Entreprise : public IActeur
 {
 protected :

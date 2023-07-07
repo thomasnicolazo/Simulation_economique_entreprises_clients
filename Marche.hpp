@@ -14,6 +14,7 @@
 #include "IActeur.hpp"
 #include <vector>
 
+class IActeur;
 class Marche
 {
 private:

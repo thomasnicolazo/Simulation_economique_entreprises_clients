@@ -56,7 +56,7 @@ std::deque<Produits> Entreprise::produire()
     {
         //On instancie un nouveau produit du type de celui que fabrique l'entreprise...
         ProduitFini nouvProduit(produitFabrication.getName(),\
-                                produitFabrication.getDureeDeFabrication(),produitFabrication.getQualite());
+                                produitFabrication.getDureeDeFabrication(),produitFabrication.getQualite(),getNom());
 
         //Evaluation du cout du produit.
         double coutNouvProduit=0;
