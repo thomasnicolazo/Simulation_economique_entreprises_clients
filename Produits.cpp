@@ -53,7 +53,7 @@ void Produits::displayProduct(){
 	std::cout << "name :" << name << " prix : " << prix << " construction : " << fabriqueDepuis << "/" << dureeFabrication << std::endl;
 }
 
-	
+
 
 
 // class ProduitBrute
@@ -66,7 +66,7 @@ ProduitBrute::ProduitBrute(std::string _nom,int _dureeF, std::string _nomEntrepr
 	name = _nom;
 	nameEntreprise = _nomEntreprise;
 }
-	
+
 ProduitBrute::~ProduitBrute(){}
 
 
