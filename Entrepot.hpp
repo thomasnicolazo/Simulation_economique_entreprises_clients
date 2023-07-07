@@ -20,6 +20,8 @@ public:
 	void eraseBoughtProduct(std::string name,double price);
 	void updateEntrepot();
 	bool isRawProducts(std::deque<Produits> listeRawProducts);
+	bool isProductInProduction();
+	void displayAllProductsFini();
 };
 
 #endif
