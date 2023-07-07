@@ -64,6 +64,6 @@ void Humain::action(){
             IComportement *consom=(IComportement*)new Consommer((Humain&)this->acteur);
             this->comportements.push_back(consom);
         }
-    }*/
+    }
 
-}
+}*/
