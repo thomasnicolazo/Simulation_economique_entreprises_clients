@@ -88,3 +88,20 @@ bool Entrepot::isRawProducts(std::deque<Produits> listeRawProducts){
 		return false;
 	}
 }
+
+bool Entrepot::isProductInProduction(){
+	bool isInProduction = false;
+	for(int i =0; i<vectorProduitFini.size();i++){
+		if(vectorProduitFini[i].isDone() == false){
+			isInProduction = true;
+			break;
+		};
+	}
+	return isInProduction;
+}
+
+void Entrepot::displayAllProductsFini(){
+	for(int i =0; i<vectorProduitFini.size();i++){
+		vectorProduitFini[i].displayProduct();
+	}
+}

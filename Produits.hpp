@@ -7,9 +7,10 @@ class Produits
 protected:
 	double prix;
 	std::string name;
-	int dureeFabrication;
-	int fabriqueDepuis;
-	bool estFabrique;
+	int dureeFabrication; // temps nécéssaire à la fabrication du produit
+	int fabriqueDepuis; // temps depuis le commencent de la favrication (commence à 0)
+	bool estFabrique; // vrai: si le produit est fini d'étre fait; faux sinon
+	std::string nameEntreprise; // nom de l'entreprise qui a fabriqué le produit
 
 public:
 	Produits(std::string nom, int dureeF);
@@ -28,14 +29,18 @@ public:
 
 	std::string getName();
 
-	bool isDone();
+	bool isDone(); // le prroduit est fini si isDone est true; sinon false
+
+	std::string getEntrepriseName(); // return the name of the company which made the product
+
+	void displayProduct(); // affiche le nom puis le prix
 
 };
 
 class ProduitBrute: public Produits // composants de fabrication
 {
 public:
-	ProduitBrute(std::string _nom,int _dureeF);// : Produits( _nom, _dureeF);
+	ProduitBrute(std::string _nom,int _dureeF, std::string _nomEntreprise);// : Produits( _nom, _dureeF);
 
 	~ProduitBrute();
 };
@@ -45,7 +50,7 @@ class ProduitFini : public Produits// produits avec valeurs ajoutées
 private:
 	int qualite;
 public:
-	ProduitFini(std::string _nom,int _dureeF, int quality); // : Produits( _nom, _dureeF);
+	ProduitFini(std::string _nom,int _dureeF, int quality,std::string _nomEntreprise); // : Produits( _nom, _dureeF);
 
 	~ProduitFini();
 

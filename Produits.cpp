@@ -4,11 +4,12 @@
 
 // class Produits
 
-Produits::Produits(std::string nom,int dureeF){
-	dureeFabrication = dureeF;
-	fabriqueDepuis = 0;
-	estFabrique = false;
-	name = nom;
+Produits::Produits(std::string nom,int dureeF, std::string nomEntreprise ){ //constructeur  Produits
+	dureeFabrication = dureeF;	//inittialise le temps de fabrication total du produit, futur developpement un meme type produit pourra avoir different temps de fabrication dû àddes problèmes.
+	fabriqueDepuis = 0; // durée depuis laquelle l'objet est en construction
+	estFabrique = false; // l'objet est il fini de construire
+	name = nom; // nom du produit // type de produit (Ex:pile)
+	nameEntreprise = nomEntreprise; // nom de l'entreprise qui a fabriqué le produit
 }
 
 Produits::~Produits(){}
