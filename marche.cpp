@@ -38,7 +38,7 @@ Marche::~Marche()
     std::cout << "Un marché a été détruit." << std::endl;
     }
 
-vector<Porduits> Marche::getListProduitsFini()
+vector<Produits> Marche::getListProduitsFini()
 {   
     std::vector<Produits> results;
     auto entreprises=this->boitesSurLeMarche;
@@ -53,13 +53,14 @@ vector<Porduits> Marche::getListProduitsFini()
  }
 
 std::vector<Produits>Marche::getListProduitsBrute()
-    {
+{
+ //useless
 
-    }
+}
 std::vector<IActeur>Marche::getListAcheteurs()
-    {
-
-    }
+{
+    //useless ?
+}
 std::vector<IActeur>Marche::getListVendeurs(Produits produit)
     {
         for(auto p=this->instance.boitesSurLeMarche.begin();p!=this->instance.boitesSurLeMarche.end();p++){
@@ -76,7 +77,18 @@ std::deque<Humain>Marche::getListHumain(){
     return this->instance.humainsSurLeMarche;
 }
 void Marche::Tour()
-    {
+{
+    /**
+     * Point d'entrée de la simulation
+     * chaque tour les actions sont réalisés d'abord par les humain puis par les entreprises
+    */
+        for(auto p=this->humainsSurLeMarche.begin();p!=this->humainsSurLeMarche.end();p++){
+            (*p).comportements.action();
 
-    }
+        }
+         for(auto p=this->boitesSurLeMarche.begin();p!=this->boitesSurLeMarche.end();p++){
+            (*p).comportements.action();
+
+        }
+}
 

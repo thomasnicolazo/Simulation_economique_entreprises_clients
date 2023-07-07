@@ -8,7 +8,7 @@
 class ComportementEntreprise : virtual IComportement,  ComportementDecorateur
 {
 private:
-//obligate to name hide?
+//obligate to  hide name?
     Entreprise* acteur;
 public:
     ComportementEntreprise(Entreprise &e);

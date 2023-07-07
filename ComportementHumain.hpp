@@ -14,7 +14,7 @@ class ComportementHumain :  public virtual IComportement,  virtual ComportementD
 {
 
 private:
-//obligate to name hide ?
+//obligate to  hide name ?
     Humain * acteur;
 public:
     ComportementHumain(Humain* h);

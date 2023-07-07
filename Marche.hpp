@@ -14,12 +14,13 @@
 #include<stdlib.h>
 #include "Entreprise.hpp"
 #include "Humain.hpp"
+#include "Produits.hpp"
 #include <vector>
 
 class Marche
 {
 private:
-    static Marche instance;
+    static Marche* instance;
     std::deque<Entreprise> boitesSurLeMarche;
     std::deque<Humain> humainsSurLeMarche;
 private:
