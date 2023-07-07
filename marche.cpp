@@ -13,7 +13,6 @@
 Marche* Marche::getInstance(){
     if(Marche::instance!=nullptr){
         return Marche::instance;
-        return Marche::instance;
     }
 }
 
