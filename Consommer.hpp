@@ -13,7 +13,7 @@ private:
 //Hiding virtual attribute 
    Humain* acteur;
 public:
-    Consommer(Humain &h);
+    Consommer(Humain *h);
     ~Consommer();
     void action() override;
 };

@@ -28,6 +28,8 @@ public:
     ~Marche();
     static Marche* getInstance();
     static void setInstance(Entreprise boite, Humain humain);
+    void setListHumain(std::deque<Humain> list);
+    void setListEntreprise(std::deque<Entreprise> list);
     std::vector<Produits> getListProduitsFini();
     std::vector<Produits> getListProduitsBrute();
     std::vector<IActeur> getListAcheteurs();

@@ -26,7 +26,20 @@ void Marche::setInstance(Entreprise boite, Humain humain){
     }
 }
 
+void Marche::setListEntreprise(std::deque<Entreprise> l){
+    if(this->boitesSurLeMarche == nullptr){
+        this->boitesSurLeMarche=new std::deque<Entreprise>();
+    }
+    this->boitesSurLeMarche.insert(this->boitesSurLeMarche.end(),l.begin(),l.end());
+}
 
+void Marche::setListHumain(std::deque<Humain> l){
+    if(this->boitesSurLeMarche == nullptr){
+        this->humainsSurLeMarche=new std::deque<Humain>();
+
+    }
+    this->humainsSurLeMarche.insert(this->humainsSurLeMarche.end(),l.begin(),l.end());
+}
 
 Marche::Marche(Entreprise boite, Humain humain)
     {

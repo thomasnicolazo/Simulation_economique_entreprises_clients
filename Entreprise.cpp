@@ -17,6 +17,7 @@
 //-----Méthodes de la classe Entreprise------//
 
 //------Constructeurs de la classe------//
+Entreprise::Entreprise()=default;
 Entreprise::Entreprise(std::string nom_, std::string adresse_, double acompte_,\
             int nbrEmploye_, double revenuTour_, double depenseTour_,\
             Entrepot entrepot_, std::deque<Produits> productionTour_,\
@@ -40,6 +41,42 @@ ProduitFini Entreprise::getProduitFabrication()             {return this->produi
 std::deque<Produits> Entreprise::getProductionTour()        {return this->productionTour;}
 std::deque<Produits> Entreprise::getProduitsAchetesTour()   {return this->produitsAchetesTour;}
 std::deque<Produits> Entreprise::getProduitsVendusTour()    {return this->produitsVendusTour;}
+
+/***setteurs****/
+void Entreprise::setNbrEmploye(int val){
+    this->nbrEmploye=val;
+}
+void Entreprise::setRevenuTour(double val){
+    this->revenuTour=val;
+}
+void Entreprise::setDepenseTour(double val){
+    this->depenseTour=val;
+}
+void Entreprise::setEntrepot(Entrepot ent){
+    this->entrepotEntreprise=ent;
+}
+void Entreprise::setR_D(rechercheEtDev retd){
+    this->r_d=retd;
+}
+void Entreprise::setProductionTour(std::deque<Produits> produits){
+    this->productionTour.clear();
+    this->productionTour.insert(this->productionTour.end(),produits.begin(),produits.end());
+    
+}
+void Entreprise::setProduitFabrication(ProduitFini produit){
+    this->produitFabrication=produit;
+}
+void Entreprise::setProduitsAchetesTour(std::deque<Produits> produits){
+    this->produitsAchetesTour.clear();
+    this->produitsAchetesTour.insert(this->produitsAchetesTour.end(),produits.begin(),produits.end());
+}
+void Entreprise::setProduitsVendusTour(std::deque<Produits> produits){
+    this->produitsVendusTour.clear();
+    this->produitsVendusTour.insert(this->produitsVendusTour.end(),produits.begin(),produits.end());
+}
+void Entreprise::setNom(std::string nom){
+    this->nom=nom;
+}
 
 //-----Méthode pour obtenir les produits finis présents dans l'entrepôts-------//
 std::vector<Produits> Entreprise::getProduitsAVendre()

@@ -2,9 +2,9 @@
 
 
 
-Consommer::Consommer(Humain &h){
+Consommer::Consommer(Humain *h){
 
-    this->acteur=&h;
+    this->acteur=h;
 
 };
 

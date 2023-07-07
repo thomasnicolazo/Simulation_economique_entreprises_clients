@@ -34,6 +34,7 @@ protected :
 
 public:
     //------Constructeurs de la classe------//
+    Entreprise();
     Entreprise(std::string nom_, std::string adresse_, double acompte_,\
                 int nbrEmploye_, double revenuTour_, double depenseTour_,\
                 Entrepot entrepot_, std::deque<Produits> productionTour_,\
@@ -50,7 +51,17 @@ public:
     ProduitFini getProduitFabrication();
     std::deque<Produits> getProduitsAchetesTour();
     std::deque<Produits> getProduitsVendusTour();
-
+    //setteurs
+    void setNbrEmploye(int val);
+    void setRevenuTour(double val);
+    void setDepenseTour(double val);
+    void setEntrepot(Entrepot ent);
+    void setR_D(rechercheEtDev retd);
+    void setProductionTour(std::deque<Produits> produits);
+    void setNom(std::string);
+    void setProduitFabrication(ProduitFini produit);
+    void setProduitsAchetesTour(std::deque<Produits> produits);
+    void setProduitsVendusTour(std::deque<Produits> produits);
     //-----Méthode pour obtenir les produits finis présents dans l'entrepôts-------//
     std::vector<Produits> getProduitsAVendre();
 
